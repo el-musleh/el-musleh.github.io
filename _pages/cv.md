@@ -97,3 +97,7 @@ UART, UDS, CAN, I2C, SPI, TCP/IP, Bluetooth
 <!--## Service and leadership
 ======
 - Currently signed in to 43 different slack teams -->
+
+<div class="cv-download-links">
+  <br><hr><a href="{{ base_path }}/files/enCV_Mohammad_El-Musleh.pdf" class="btn btn--primary">Download CV as PDF</a>
+</div>
