@@ -3,62 +3,97 @@ layout: archive
 title: "CV"
 permalink: /cv/
 author_profile: true
+description: "Professional C#/.NET Software Developer with expertise in clean code, testing, and agile methods."
 redirect_from:
   - /resume
 ---
 
 {% include base_path %}
+{% include toc %}
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+## Education
+------------
+### Master of Science in Embedded Systems
+*Uppsala University (UU) | Uppsala, Sweden | Sep 2018 – Nov 2020*
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+### Bachelor of Science in Computer Engineering
+*Near East University (NEU) | Nicosia, Cyprus | Sep 2014 – Jun 2018*
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+## Work Experience
+------------------
+### Professional Development
+*Self-Directed | Wernau, Germany | Nov 2024 – Current*
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+- Achieved German language B1 proficiency; currently pursuing B2 to enhance professional capabilities.
+- Completed multiple online courses in Artificial Intelligence through Coursera to stay current with industry trends and earn university certificates.
+- Actively contributed to open-source projects, enhancing collaboration and real-world coding skills.
+
+### Consultant Engineer
+*ALTEN GmbH | Coburg, Germany | Feb 2022 – Oct 2024*
+
+- Successfully completed the first ALTEN mission at Bosch Thermotechnik GmbH, extended over a consultancy period of 2 years and 3 months.
+- Developed and launched four major releases of an in-house tool utilizing C# within the .NET Framework, leading to widespread adoption by hundreds of service technicians and improving service response times across eight European countries.
+- Debugged and unit tested multithreaded applications in Visual Studio, resolving bugs within sprint cycles.
+- Resolved 70% of field issues and enhanced post-release handling through direct engagement with end-users and stakeholders, earning recognition from Bosch's Head of Software Development.
+
+### Software Developer
+*BOSCH Thermoteknik AB | Tranås, Sweden | Mar 2021 – Jan 2022*
+
+- Designed an advanced firmware update tool for heat pumps, utilizing C++ for CAN communication and a C#.NET GUI, significantly improving user satisfaction.
+- Applied SOLID principles and clean coding practices, resulting in more efficient, maintainable code that reduced technical debt.
+- Integrated Azure storage for asynchronous updates, leveraging Python scripts to automate processes, which reduced manual effort and saved users time, thereby enhancing overall efficiency.
+
+### Educational Researcher (Thesis)
+*NEVS AB | Trollhättan, Sweden | Feb 2020 – Dec 2020 (8 months)*
+
+- Completed an 8-month thesis research in collaboration with NEVS (National Electric Vehicle Sweden), focusing on automated test case generation from requirements for the automotive industry.
+- Created a demo using a full stack (Neo4j, GraphQL, React.js), integrating a Neo4j graph database with a GraphQL API for efficient data visualization and interaction, supporting thesis research.
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+## Technical Skills
+-------------------
+### Languages
+C, C++, C#, Python, VHDL/Verilog, GraphQL, HTML, CSS, JavaScript, JSON, XML, MATLAB & Simulink
+### System Architecture & Methodologies
+SOLID principles, Scalable software design, Clean Code practices, Agile (Scrum/KanBan), V-MODEL, UML, CI/CD Pipelines
+### Tools & Platforms
+Visual Studio, Git, GitHub, FreeRTOS, MATLAB, Atlassian (Bitbucket, Confluence, Jira), Microsoft Azure (storage account), Docker, MySQL, Neo4j graph, FPGA (VHDL - Xilinx Vivado)
+### Testing & Debugging
+CANalyzer, ECU-Test, HiL Testing, Debugging, Unit Testing Test Planning, Peer Reviews
+### Protocols & Standards
+UART, UDS, CAN, I2C, SPI, TCP/IP, Bluetooth
 
-Publications
-======
+## Language Skills
+------------------
+- **Arabic:** Mother Tongue
+- **English:** Proficient
+- **German:** Intermediate
+
+## Honours and Awards
+---------------------
+- **Won the Carlsberg Hackathon 2020** - Carlsberg Group (*Nov 2020*)
+- Received **four certificates of honor** during bachelor's studies for maintaining a high GPA - Near East University (*Jun 2018*)
+    - *High Honour (GPA 3.64/4, 3.52/4)*
+    - *Honour (GPA 3.30/4, 3.22/4)*
+- Granted a half-tuition scholarship to study bachelor's at NEU (*Sep 2014*)
+
+## Publications
+------------
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
+
+<!--## Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Teaching
+<!--## Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Service and leadership
+<!--## Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+- Currently signed in to 43 different slack teams -->
