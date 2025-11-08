@@ -19,3 +19,5 @@ This thesis introduces an approach to transform the Unified Modeling Language (U
 Based on the similarity between the state machine notation and the nodes and edges (with properties) in graph databases, a set of rules for representation is presented in this thesis. Along with a framework based on GRANDstack (full-stack framework), the framework should use the pre-built graph database together with other technologies to generate test cases from the inserted requirements specification.
 
 A proof-of-concept is implemented to demonstrate the proposed framework. By using a dedicated schema, the fetched data is matched with the expected results. The results prove that the transformation method and the proposed framework have a good potential to be developed and evaluated with a realistic test from the industry practice. 
+
+[The source code is available in Github.](https://github.com/el-musleh/uml-req2test)
