@@ -18,8 +18,7 @@ My main technical interests include AI integration, robotics, process automation
 Outside of work, I enjoy exploring technology trends (thanks to [Feedbro](https://nodetics.com/feedbro/)), refining my [Obsidian](https://obsidian.md/) note-taking systems, learning new language (via [Anki](https://apps.ankiweb.net/) and YouTube), GYM workout, and integrate AI into almost everything!
 
 <div class="cv-download-links">
-  <a href="{{ base_path }}/files/misc/el-musleh_contacts.vcf" class="btn btn--inverse">🪪 Download contact information</a>
+  <a href="{{ base_path }}/files/misc/el-musleh_contacts.vcf" class="btn btn--info">🪪 Download my contact information (vcf)</a>
   <br>
-  <a href="{{ base_path }}/cv/" class="btn btn--inverse">View Markdown CV</a>
-  <a href="{{ base_path }}/files/enCV_Mohammad_El-Musleh.pdf" class="btn btn--primary">Download CV as PDF</a>
+  <a href="{{ base_path }}/cv/" class="btn btn--info">📄 View my CV page</a>
 </div>
