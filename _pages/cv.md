@@ -9,7 +9,13 @@ redirect_from:
 ---
 
 {% include base_path %}
-{% include toc %}
+<!--{% include toc %}-->
+
+Connect with me and see my recent updates and posts on [my LinkedIn profile](https://www.linkedin.com/in/el-musleh/).
+
+<div class="cv-download-links">
+  <a href="{{ base_path }}/files/misc/enCV_Mohammad_El-Musleh.pdf" class="btn btn--primary">Download CV as PDF</a>
+</div>
 
 ## Education
 ------------
@@ -48,7 +54,28 @@ redirect_from:
 
 - Completed an 8-month thesis research in collaboration with NEVS (National Electric Vehicle Sweden), focusing on automated test case generation from requirements for the automotive industry.
 - Created a demo using a full stack (Neo4j, GraphQL, React.js), integrating a Neo4j graph database with a GraphQL API for efficient data visualization and interaction, supporting thesis research.
-  
+
+###  IT and Network Support (Summer intern)
+*Global Integrated Solution | Sidon, Lebanon | July 2017 – September 2017 (3 months)*
+
+- Assisted with network deployment tasks, including the physical installation and configuration of network hardware and wireless access points.
+- Conducted regular network monitoring and performance testing; utilized configuration tools to manage wireless network settings and security.
+- Delivered timely technical assistance and troubleshooting across systems, contributing to efficient network functionality and minimal downtime.
+
+<div>
+You can <a href="{{ base_path }}/files/publications/2017/Summer Practice Report II.pdf">read the report</a> or <a href="{{ base_path }}/files/work/2017/2017 GIS Intern Training Certificate.pdf">view the certificate of completion</a>.
+</div>
+
+### IT and Network Support (Summer intern)
+*Global Integrated Solution | Sidon, Lebanon | July 2016 – September 2016 (3 months)*
+
+- Supported field Engineers in the design and structuring of network solutions, ensuring client requirements were integrated into the architecture.
+- Assisted in end-to-end network installations, performing critical tasks such as physical deployment, professional cabling termination, and detailed component labeling.
+
+<div>
+You can <a href="{{ base_path }}/files/publications/2016/Summer Practice Report I.pdf">read the report</a> or <a href="{{ base_path }}/files/work/2016/2016 GIS Intern Training Certificate.pdf">view the certificate of completion</a>.
+</div>
+
 ## Technical Skills
 -------------------
 ### Languages
@@ -98,6 +125,4 @@ UART, UDS, CAN, I2C, SPI, TCP/IP, Bluetooth
 ======
 - Currently signed in to 43 different slack teams -->
 
-<div class="cv-download-links">
-  <br><hr><a href="{{ base_path }}/files/enCV_Mohammad_El-Musleh.pdf" class="btn btn--primary">Download CV as PDF</a>
-</div>
+
