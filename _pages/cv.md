@@ -14,7 +14,7 @@ redirect_from:
 Connect with me and see my recent updates and posts on [my LinkedIn profile](https://www.linkedin.com/in/el-musleh/).
 
 <div class="cv-download-links">
-  <a href="{{ base_path }}/files/misc/enCV_Mohammad_El-Musleh.pdf" class="btn btn--primary">Download CV as PDF</a>
+  <a href="{{ base_path }}/files/misc/enCV_Mohammad_El-Musleh.pdf" class="btn btn--info">Download CV as PDF</a>
 </div>
 
 ## Education
@@ -35,7 +35,7 @@ Connect with me and see my recent updates and posts on [my LinkedIn profile](htt
 - Actively contributed to open-source projects, enhancing collaboration and real-world coding skills.
 
 ### Consultant Engineer
-*ALTEN GmbH | Coburg, Germany | Feb 2022 – Oct 2024*
+*ALTEN GmbH | Coburg, Germany | Feb 2022 – Oct 2024 (33 months)*
 
 - Successfully completed the first ALTEN mission at Bosch Thermotechnik GmbH, extended over a consultancy period of 2 years and 3 months.
 - Developed and launched four major releases of an in-house tool utilizing C# within the .NET Framework, leading to widespread adoption by hundreds of service technicians and improving service response times across eight European countries.
@@ -43,7 +43,7 @@ Connect with me and see my recent updates and posts on [my LinkedIn profile](htt
 - Resolved 70% of field issues and enhanced post-release handling through direct engagement with end-users and stakeholders, earning recognition from Bosch's Head of Software Development.
 
 ### Software Developer
-*BOSCH Thermoteknik AB | Tranås, Sweden | Mar 2021 – Jan 2022*
+*BOSCH Thermoteknik AB | Tranås, Sweden | Mar 2021 – Jan 2022 (11 months)*
 
 - Designed an advanced firmware update tool for heat pumps, utilizing C++ for CAN communication and a C#.NET GUI, significantly improving user satisfaction.
 - Applied SOLID principles and clean coding practices, resulting in more efficient, maintainable code that reduced technical debt.

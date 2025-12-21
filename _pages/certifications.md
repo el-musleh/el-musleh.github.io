@@ -29,7 +29,7 @@ Certifications are organized by topic to provide a clear overview of my expertis
 | **GitHub Copilot & ChatGPT for Devs - Code Smarter in 2024**   | Packt                                                  | Coursera Inc | 2025-03-07 | [Certificate Link](https://coursera.org/share/47dc257433a90fe8c14f8eea98de95dc)          |
 | **Machine Learning A-Z™: Hands-On Python & R In Data Science** | SuperDataScience, Hadelin de Ponteves, Kirill Eremenko | Udemy Inc    | 2019-06-30 | [Certificate Link]({{ base_path }}/files/certifications/AI/Machine Learning A-Z.pdf)     |
 
-### Programming Languages (C/C++ & JavaScript)
+### Programming Languages (C/C++, C# & JavaScript)
 
 | Title | Issued By | Platform | Date | Verification |
 | --- | --- | --- | --- | --- |
