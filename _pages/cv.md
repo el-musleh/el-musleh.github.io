@@ -42,6 +42,10 @@ Connect with me and see my recent updates and posts on [my LinkedIn profile](htt
 - Debugged and unit tested multithreaded applications in Visual Studio, resolving bugs within sprint cycles.
 - Resolved 70% of field issues and enhanced post-release handling through direct engagement with end-users and stakeholders, earning recognition from Bosch's Head of Software Development.
 
+<div>
+You can <a href="{{ base_path }}/files/work/2024/ALTEN_Reference_Letter.pdf">view the reference letter</a>.
+</div>
+
 ### Software Developer
 *BOSCH Thermoteknik AB | Tranås, Sweden | Mar 2021 – Jan 2022 (11 months)*
 
@@ -54,6 +58,10 @@ Connect with me and see my recent updates and posts on [my LinkedIn profile](htt
 
 - Completed an 8-month thesis research in collaboration with NEVS (National Electric Vehicle Sweden), focusing on automated test case generation from requirements for the automotive industry.
 - Created a demo using a full stack (Neo4j, GraphQL, React.js), integrating a Neo4j graph database with a GraphQL API for efficient data visualization and interaction, supporting thesis research.
+
+<div>
+You can <a href="{{ base_path }}/_publications/2020-11-11-transformation-of-UML-State-Machine-diagram-into-graph-DB.md">read the report</a>.
+</div>
 
 ###  IT and Network Support (Summer intern)
 *Global Integrated Solution | Sidon, Lebanon | July 2017 – September 2017 (3 months)*
@@ -102,6 +110,10 @@ UART, UDS, CAN, I2C, SPI, TCP/IP, Bluetooth
     - *High Honour (GPA 3.64/4, 3.52/4)*
     - *Honour (GPA 3.30/4, 3.22/4)*
 - Granted a half-tuition scholarship to study bachelor's at NEU (*Sep 2014*)
+
+<div class="cv-download-links">
+<a href="{{ base_path }}/certifications/" class="btn btn--info">View my completed certifications.</a>
+</div>
 
 ## Publications
 ------------
