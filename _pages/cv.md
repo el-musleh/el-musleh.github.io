@@ -15,6 +15,8 @@ Connect with me and see my recent updates and posts on [my LinkedIn profile](htt
 
 <div class="cv-download-links">
   <a href="{{ base_path }}/files/misc/enCV_Mohammad_El-Musleh.pdf" class="btn btn--info">Download CV as PDF</a>
+  <br>
+  <a href="{{ base_path }}/files/misc/el-musleh_contacts.vcf" class="btn btn--info">🪪 Download my contact information (vcf)</a>
 </div>
 
 ## Education

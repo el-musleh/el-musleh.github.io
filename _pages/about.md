@@ -15,6 +15,4 @@ My main technical interests include AI integration, robotics, process automation
 
 <div class="cv-download-links">
   <a href="{{ base_path }}/cv/" class="btn btn--info">📄 View my CV page</a>
-  <br>
-  <a href="{{ base_path }}/files/misc/el-musleh_contacts.vcf" class="btn btn--info">🪪 Download my contact information (vcf)</a>
 </div>
