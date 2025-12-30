@@ -42,16 +42,71 @@ Connect with me and see my recent updates and posts on [my LinkedIn profile](htt
 
 ## Technical Skills
 -------------------
-### Languages
-C, C++, C#, Python, VHDL/Verilog, GraphQL, HTML, CSS, JavaScript, JSON, XML, MATLAB & Simulink
-### System Architecture & Methodologies
-SOLID principles, Scalable software design, Clean Code practices, Agile (Scrum/KanBan), V-MODEL, UML, CI/CD Pipelines
-### Tools & Platforms
-Visual Studio, Git, GitHub, FreeRTOS, MATLAB, Atlassian (Bitbucket, Confluence, Jira), Microsoft Azure (storage account), Docker, MySQL, Neo4j graph, FPGA (VHDL - Xilinx Vivado)
-### Testing & Debugging
-CANalyzer, ECU-Test, HiL Testing, Debugging, Unit Testing Test Planning, Peer Reviews
-### Protocols & Standards
-UART, UDS, CAN, I2C, SPI, TCP/IP, Bluetooth
+<div id="cv-skills-cloud" class="skills-container">
+  <!-- 1. Static Fallback (For SEO and fast loading of YAML tags) -->
+  {% assign all_docs = site.education | concat: site.experience | concat: site.portfolio | concat: site.publications %}
+  {% assign raw_tags = "" | split: "" %}
+  {% for doc in all_docs %}
+    {% if doc.tags %}
+      {% assign raw_tags = raw_tags | concat: doc.tags %}
+    {% endif %}
+  {% endfor %}
+  {% assign unique_tags = raw_tags | uniq | sort %}
+  
+  {% for tag in unique_tags %}
+    <a href="{{ '/skills/' | relative_url }}?tag={{ tag | url_encode }}" class="cv-skill-badge">
+      {{ tag }}
+    </a>
+  {% endfor %}
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const container = document.getElementById('cv-skills-cloud');
+  
+  // Fetch the same feed used by the Skills Matrix
+  fetch('{{ "/assets/skills-feed.json" | relative_url }}')
+    .then(response => response.json())
+    .then(data => {
+      const allSkills = new Set();
+
+      data.forEach(doc => {
+        // A. Add Front Matter Tags
+        if (doc.tags && Array.isArray(doc.tags)) {
+          doc.tags.forEach(t => allSkills.add(t));
+        }
+        
+        // B. Add Inline Tags (Parse the HTML content)
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = doc.content;
+        const inlineTags = tempDiv.querySelectorAll('.cv-skill-tag');
+        
+        inlineTags.forEach(tagElem => {
+          const name = tagElem.getAttribute('data-skill');
+          if (name) allSkills.add(name);
+        });
+      });
+
+      // C. Re-render the container with the complete, sorted list
+      if (allSkills.size > 0) {
+        container.innerHTML = ''; // Clear static fallback
+        
+        const sortedSkills = Array.from(allSkills).sort((a, b) => a.localeCompare(b));
+
+        sortedSkills.forEach(skill => {
+          const a = document.createElement('a');
+          // encodeURIComponent handles C# -> C%23 and C++ -> C%2B%2B correctly
+          a.href = `{{ '/skills/' | relative_url }}?tag=${encodeURIComponent(skill)}`;
+          a.className = 'cv-skill-badge';
+          a.textContent = skill;
+          a.title = `View projects using ${skill}`;
+          container.appendChild(a);
+        });
+      }
+    })
+    .catch(err => console.error('Failed to load unified skills cloud:', err));
+});
+</script>
 
 ## Language Skills
 ------------------
@@ -92,5 +147,3 @@ UART, UDS, CAN, I2C, SPI, TCP/IP, Bluetooth
 <!--## Service and leadership
 ======
 - Currently signed in to 43 different slack teams -->
-
-

@@ -238,6 +238,10 @@ collections:
     output: true
     permalink: /:collection/:path/
     sort_by: date
+  blog:
+    output: true
+    permalink: /:collection/:path/
+    sort_by: date
 
 # These settings control how pages and collections are included in the site
 defaults:

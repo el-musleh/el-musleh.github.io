@@ -1,0 +1,20 @@
+---
+layout: null
+---
+[
+  {% comment %} 
+    Concatenate all collections you want to scan for skills 
+  {% endcomment %}
+  {% assign all_docs = site.education | concat: site.experience | concat: site.portfolio | concat: site.publications | concat: site.posts %}
+  
+  {% for doc in all_docs %}
+    {
+      "title": {{ doc.title | jsonify }},
+      "url": {{ doc.url | relative_url | jsonify }},
+      "venue": {{ doc.venue | jsonify }},
+      "tags": {{ doc.tags | jsonify }}, 
+      "content": {{ doc.content | jsonify }}
+    }
+    {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

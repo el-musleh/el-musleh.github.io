@@ -41,3 +41,28 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Space between tags */
+  margin-top: 10px;
+}
+
+.cv-skill-badge {
+  background-color: #f3f4f6;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 0.9em;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.cv-skill-badge:hover {
+  background-color: #0056b3; /* Change to your theme color */
+  color: white;
+  text-decoration: none;
+  border-color: #0056b3;
+}
