@@ -65,9 +65,19 @@ document.addEventListener("DOMContentLoaded", function() {
   const container = document.getElementById('cv-skills-cloud');
   
   // Fetch the same feed used by the Skills Matrix
-  fetch('{{ "/assets/skills-feed.json" | relative_url }}')
-    .then(response => response.json())
+  const feedUrl = '{{ "/assets/skills-feed.json" | relative_url }}';
+  console.debug('Fetching skills feed from', feedUrl);
+
+  fetch(feedUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch skills feed: ' + response.status + ' ' + response.statusText);
+      }
+      return response.json();
+    })
     .then(data => {
+      if (!Array.isArray(data)) throw new Error('Skills feed JSON is not an array');
+
       const allSkills = new Set();
 
       data.forEach(doc => {
@@ -104,7 +114,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       }
     })
-    .catch(err => console.error('Failed to load unified skills cloud:', err));
+    .catch(err => {
+      console.error('Failed to load unified skills cloud:', err);
+      if (container) {
+        const note = document.createElement('div');
+        note.style.fontSize = '0.9em';
+        note.style.color = '#666';
+        note.style.marginTop = '8px';
+        note.textContent = 'Live skills cloud unavailable; showing static skill list.';
+        container.appendChild(note);
+      }
+    });
 });
 </script>
 

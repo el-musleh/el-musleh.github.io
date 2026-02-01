@@ -25,7 +25,7 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Mohammad El-Musleh"
-  pronouns         : # example: "she/her"  
+  pronouns         : "He/Him"  
   bio              : "Embedded Systems Engineer"
   location         : "Germany"
   employer         : # Name of the company or the institution
@@ -75,7 +75,7 @@ author:
   vine             : # Username
   weibo            : # Username
   wikipedia        : # Username
-  xing             : # Username
+  xing             : Mohammad_ElMusleh074362
   youtube          : el-musleh
   zhihu            : # Username
 
