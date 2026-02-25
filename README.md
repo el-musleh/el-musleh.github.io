@@ -3,6 +3,20 @@
 
 ![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
 
+# Quick Start
+
+## Development Server
+
+To serve the site locally with live reload, run:
+
+```bash
+bundle exec jekyll serve -l -H localhost
+```
+
+The site will be available at `http://localhost:4000`. The `-l` flag enables live reload, and `-H localhost` ensures the server binds to localhost.
+
+---
+
 # Getting Started
 
 1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
