@@ -127,7 +127,7 @@ atom_feed:
 
 
 # SEO Related
-google_site_verification :
+google-site-verification : google868e83e66ce36de9.html
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
@@ -154,7 +154,7 @@ social:
 analytics:
   provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
-    tracking_id          :
+    tracking_id          :  "G-RWQTGQJJD9"
 
 
 # Reading Files
@@ -227,6 +227,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -285,6 +288,15 @@ defaults:
   - scope:
       path: ""
       type: portfolio
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
     values:
       layout: single
       author_profile: true
