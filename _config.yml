@@ -96,7 +96,7 @@ future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : "staticman" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
     shortname            :
   discourse:
@@ -107,7 +107,7 @@ comments:
     colorscheme          : # "light" (default), "dark"
 staticman:
   allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages" # "master", "gh-pages"
+  branch                 : "master" # "master", "gh-pages"
   commitMessage          : "New comment."
   filename               : comment-{@timestamp}
   format                 : "yml"
@@ -127,7 +127,7 @@ atom_feed:
 
 
 # SEO Related
-google-site-verification : "google868e83e66ce36de9.html"
+google-site-verification : "eVXK54y3xgw2sOxjnZLXWgZpMyNJZMbg_RLpVeSyEhw"
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
@@ -135,20 +135,33 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : &twitter "123elmusleh"
 facebook:
-  username               :
+  username               : "mohammad.elmusleh"
   app_id                 :
   publisher              :
-og_image                 :  # Social media default site image
-og_description           :  # Social media default site image description
+og_image                 :  "/images/profile.png" # Social media default site image
+og_description           :  "All about me and my work in AI, embedded systems, and software development."  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : "Person" # Person or Organization (defaults to Person)
+  name                   : "Mohammad El-Musleh" # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
-
+    - "https://linkedin.com/in/el-musleh"
+    - "https://github.com/el-musleh"
+    - "https://scholar.google.com/citations?user=eAdur28AAAAJ"
+    - "https://orcid.org/0000-0001-6424-2277"
+    - "https://www.researchgate.net/profile/Mohammad_El-Musleh"
+    - "https://twitter.com/123elmusleh"
+    - "https://www.youtube.com/@el-musleh"
+    - "https://www.xing.com/profile/Mohammad_ElMusleh074362"
+    - "https://instagram.com/mohammad.elmusleh"
+    - "https://www.el-musleh.github.io"
+    - "https://www.facebook.com/mohammad.elmusleh"
+    - "https://www.stackoverflow.com/users/5859682/el-musleh"
+    - "https://uppsala.academia.edu/elmusleh"
+    - "https://elmusleh.site"
 
 # Analytics
 analytics:
@@ -334,19 +347,21 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
-timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: Europe/Berlin # (valid IANA timezone name) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
 plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jemoji
+  - jekyll-feed # Allows people (and AI news aggregators) to follow your blog via RSS.
+  - jekyll-gist # Displays GitHub Gists as posts. Automatically updates on your website.
+  - jekyll-paginate # automatically splits your blog post list into manageable pages (e.g., 5 or 10 posts per page).
+  - jekyll-sitemap  # Tells Google exactly which pages to crawl.
+  - jekyll-seo-tag  # Handles titles and social media previews.
+  - jekyll-redirect-from  # Essential if you ever rename a post URL so you don't lose SEO rank.
+  - jemoji  # Adds emoji support GitHub-style emoji codes
+  - jekyll-minifier # Makes your HTML/CSS/JS tiny for fast loading.
 
 # Mimic GitHub Pages with --safe
 whitelist:
