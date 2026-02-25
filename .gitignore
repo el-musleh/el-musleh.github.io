@@ -1,23 +1,662 @@
-# Ignore the contents of the _site directory and other cache directories
+# =============================================================================
+# COMPREHENSIVE .GITIGNORE - BEST PRACTICES
+# =============================================================================
+# This .gitignore follows current best practices and is designed to handle
+# various project types, development environments, frameworks, languages,
+# IDEs, operating systems, and build outputs.
+#
+# ORGANIZATION:
+# 1. Operating System Files
+# 2. IDEs and Editors
+# 3. Language-Specific (Node.js, Python, Ruby/Jekyll, Java, Go, Rust, etc.)
+# 4. Package Managers
+# 5. Build Outputs and Compiled Files
+# 6. Environment and Secrets
+# 7. Testing and Coverage
+# 8. Documentation and Assets
+# 9. Project-Specific
+#
+# Customize this file based on your project requirements. Remove sections
+# that don't apply to your project, or add custom patterns as needed.
+# =============================================================================
+
+# =============================================================================
+# 1. OPERATING SYSTEM FILES
+# =============================================================================
+# Platform-specific temporary files that should never be committed
+
+# macOS
+# --------
+# macOS system files - created when accessing directories in Finder
+.DS_Store
+# AppleDouble files - created by macOS when storing resource forks
+._*
+# Spotlight search index
+.Spotlight-V100
+# Trash folder metadata
+.Trashes
+# Volume icon (can appear on removable media)
+.VolumeIcon.icns
+# Temporary items
+*~
+
+# Windows
+# --------
+# Windows thumbnail cache
+Thumbs.db
+Thumbs.db:encryptable
+# Windows error logs
+ehthumbs.db
+ehthumbs_vista.db
+# Windows log files
+*.log
+# Windows temporary files
+*.tmp
+# Recycle bin
+$RECYCLE.BIN/
+# Desktop.ini (stores folder view settings)
+Desktop.ini
+
+# Linux
+# --------
+# Core dumps (often created when programs crash)
+core
+# Backup files ending with ~
+*~
+# Backup files ending with #
+\#*#
+# Automatic backup files
+*.bak
+# Temporary files
+*.swp
+*.swo
+*~
+# Midnight Commander (file manager) backup files
+.*.sw[p]
+
+
+# =============================================================================
+# 2. IDEs AND EDITORS
+# =============================================================================
+# Development environment files that are personal preferences
+# and should not be committed to shared repositories
+
+# VS Code
+# --------
+# VS Code workspace settings (user-specific)
+.vscode/*
+# Exception: Keep these if you want to share editor settings
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# VS Code extensions
+.vscode/extensions.json
+# VS Code recommended settings
+.vscodeignore
+
+# JetBrains IDEs (IntelliJ, WebStorm, PyCharm, etc.)
+# --------
+# JetBrains IDE workspace files
+.idea/
+# JetBrains module files
+*.iml
+# JetBrains out directory
+out/
+# JetBrains library files
+.idea_modules/
+
+# Sublime Text
+# --------
+# Sublime Text workspace files
+*.sublime-*
+# Sublime Text cache
+Packages/
+# Sublime Text project files
+*.sublime-project
+
+# Vim
+# --------
+# Vim swap files
+*.swo
+*.swp
+# Vim undo files
+*.un~
+# Vim session files
+*.vim
+
+# Emacs
+# --------
+# Emacs auto-save files
+*~
+\#*\#
+# Emacs backup files
+.#*
+# Emacs tramp files
+\#*#
+# Emacs org-mode agenda files
+.org-id-locations
+
+# Atom
+# --------
+# Atom workspace
+.atom/
+# Atom build config
+.buildlog
+
+# Eclipse
+# --------
+# Eclipse workspace
+.settings/
+# Eclipse project files
+.classpath
+.project
+
+# NetBeans
+# --------
+# NetBeans project directory
+nbproject/
+# NetBeans private configurations
+nbproject/private/
+
+# Notepad++ (if used)
+# --------
+# Notepad++ session file
+session.vbs
+
+# Cursor IDE
+# --------
+.cursor/
+
+
+# =============================================================================
+# 3. LANGUAGE AND FRAMEWORK SPECIFIC
+# =============================================================================
+# Patterns for specific programming languages and their ecosystems
+# Uncomment sections relevant to your project
+
+# -----------------------------------------------------------------------------
+# Node.js / npm
+# -----------------------------------------------------------------------------
+# Dependencies directory (usually should be in .npmrc or package.json)
+node_modules/
+# npm debug log
+npm-debug.log*
+# npm cache
+.npm
+# Yarn
+.yarn/
+.yarn-integrity
+# pnpm
+.pnpm-store/
+# Package lock files (optional - some projects prefer to commit these)
+# package-lock.json
+# yarn.lock (uncomment if using Yarn)
+# pnpm-lock.yaml
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+# C extensions
+*.so
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+# Virtual environment wrapper
+.Python
+env/
+.venv
+venv.bak/
+# PyInstaller (compiled Python)
+*.manifest
+*.spec
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+# Pyre
+.pyre/
+# Jupyter Notebook
+.ipynb_checkpoints
+# IPython
+__pycache__/
+# Flask
+instance/
+.webassets-cache
+# Scrapy
+.scrapy
+# Sphinx documentation (if building docs)
+docs/_build/
+
+# -----------------------------------------------------------------------------
+# Ruby / Jekyll
+# -----------------------------------------------------------------------------
+# Gems
+vendor/bundle/
+.bundle/
+# Gemfile.lock (optional - often committed for production)
+# Gemfile.lock
+# Jekyll build output
 _site/
+# Jekyll metadata
+.jekyll-cache/
+.jekyll-metadata
+# SASS cache
 .sass-cache/
+# Gem metadata (if using RubyGems)
+gemfiles/*.lock
+# rbenv / rvm
+.rvm/
+# Ruby version file
+.ruby-version
+# Ruby gemset
+.ruby-gemset
 
-# Ignore the directory for local files during development
-local/
+# -----------------------------------------------------------------------------
+# Java
+# -----------------------------------------------------------------------------
+# Compiled class files
+*.class
+# Log files
+*.log
+# BlueJ files
+*.ctxt
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+# Virtual machine crash logs
+hs_err_pid*
+replay_pid*
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+# Gradle
+.gradle/
+# Gradle wrapper
+gradle/wrapper/gradle-wrapper.jar
+# Build output
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!src/main/**/build/
+!src/test/**/build/
 
-# Ignore the Gemfile that is generated
+# -----------------------------------------------------------------------------
+# C / C++
+# -----------------------------------------------------------------------------
+# Compiled object files
+*.o
+*.obj
+# Precompiled headers
+*.gch
+*.pch
+# Compiled dynamic libraries
+*.so
+*.dylib
+# Compiled static libraries
+*.a
+*.lib
+# Executables
+*.exe
+*.out
+*.app
+# Visual Studio files
+.vs/
+ipch/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# -----------------------------------------------------------------------------
+# Go
+# -----------------------------------------------------------------------------
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+# Test binary
+*.test
+# Output of the go coverage tool
+*.out
+# Go workspace file
+go.work
+# Dependency directories
+vendor/
+# Go build output
+/bin/
+/pkg/
+
+# -----------------------------------------------------------------------------
+# Rust
+# -----------------------------------------------------------------------------
+# Build artifacts
+target/
+# Cargo lock (optional - some projects prefer to commit)
+# Cargo.lock
+# Rust debugging
+*.pdb
+# Rust anonymous containers
+rustc-*
+
+# -----------------------------------------------------------------------------
+# Swift / iOS / macOS
+# -----------------------------------------------------------------------------
+# Xcode
+xcuserdata/
+*.xcuserdatad
+*.xcworkspace
+!default.xcworkspace
+# Derived data
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+# CocoaPods
+Pods/
+# Swift Package Manager
+.swiftpm/
+# Xcode build
+build/
+# Carthage
+Carthage/Build/
+Carthage/Checkouts/
+
+# -----------------------------------------------------------------------------
+# .NET / C#
+# -----------------------------------------------------------------------------
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+# Visual Studio user files
+*.rsuser
+*.resx
+*.ncb
+*.opendb
+*.aps
+*.pch
+*.idl
+*.mscs
+# NuGet
+*.nupkg
+# Packages
+packages/
+# Tools
+*.tlb
+*.tlh
+*.bat
+
+# -----------------------------------------------------------------------------
+# PHP
+# -----------------------------------------------------------------------------
+# Composer
+vendor/
+# Composer lock (optional)
+# composer.lock
+# PHPStorm
+.idea/
+# Xdebug
+.xdebug/
+# PHPUnit
+.phpunit.result.cache
+# Laravel
+/node_modules/
+/vendor/
+# PHP temporary files
+*.php~
+*.swf
+*.sfcache
+# CakePHP
+/tmp/
+/logs/
+
+
+# =============================================================================
+# 4. PACKAGE MANAGERS
+# =============================================================================
+# Package manager files and lock files (some may be intentionally committed)
+
+# npm / Node
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Python / pip
+pip-log.txt
+pip-delete-this-directory.txt
+.pip/
+# Poetry
+poetry.lock
+
+# Bundler / Ruby
 Gemfile.lock
 
-# Ignore files created by npm
-node_modules
-package-lock.json
+# Cargo / Rust
+Cargo.lock
 
-# Ignore the vendor file at root level and bundle for alternative installation
-/vendor/
-.bundle/
+# Composer / PHP
+composer.lock
 
-# Ignore folders related to IDEs
-.vscode/
+# Conan / C++
+conanfile.txt
+conaninfo.txt
+conanbuild.txt
+conanvisualstudio.dll
 
-# Ignore draft folder
+# vcpkg
+vcpkg_installed/
+
+
+# =============================================================================
+# 5. BUILD OUTPUTS AND COMPILED FILES
+# =============================================================================
+# Directories and files generated by build processes
+
+# Build directories
+dist/
+build/
+out/
+target/
+bin/
+obj/
+# Documentation output
+docs/_build/
+site/
+# Coverage reports output
+coverage/
+.nyc_output/
+# TypeScript
+*.tsbuildinfo
+# SASS/CSS compiled output
+*.css.map
+# Minified files (usually generated)
+*.min.js
+*.min.css
+# Bundled files (webpack, rollup, etc.)
+bundle.js
+bundle.css
+
+
+# =============================================================================
+# 6. ENVIRONMENT AND SECRETS
+# =============================================================================
+# Files containing sensitive information or environment configurations
+# IMPORTANT: Never commit secrets, API keys, or credentials!
+
+# Environment variables files
+.env
+.env.local
+.env.*.local
+# Python virtual env activation script
+venv/bin/activate
+# Node environment
+.node_repl_history
+# AWS credentials
+*.pem
+# Google Cloud credentials
+*.json
+# Azure credentials
+*.publishsettings
+# Heroku
+.env
+# Terraform
+*.tfstate
+*.tfstate.*
+# Ansible
+*.retry
+# Docker
+.env
+docker-compose.override.yml
+# Misc secrets
+credentials.json
+secrets.yaml
+*.secret
+
+
+# =============================================================================
+# 7. TESTING AND COVERAGE
+# =============================================================================
+# Test files, coverage reports, and debugging tools
+
+# Test directories and files
+coverage/
+.nyc_output/
+htmlcov/
+# Jest
+coverage/
+# Vitest
+coverage/
+# Mocha
+.nyc_output/
+# Istanbul
+coverage/
+# Coveralls
+coverage/
+# Python coverage
+.coverage
+.coverage.*
+htmlcov/
+# Test results
+test-results/
+# Benchmark results
+benchmark/*.json
+benchmark/benchmarks/
+
+
+# =============================================================================
+# 8. DOCUMENTATION AND ASSETS
+# =============================================================================
+# Documentation build outputs and large asset files
+
+# PDF/EPUB builds
+*.pdf
+*.epub
+# Generated documentation
+site/
+docs/_site/
+# Large media files (if tracked separately)
+# *.mp4
+# *.zip
+# *.tar.gz
+
+
+# =============================================================================
+# 9. PROJECT-SPECIFIC
+# =============================================================================
+# Add your project-specific ignore rules below
+
+# Jekyll drafts and future posts
 _drafts/
+# Local development files
+local/
+# Any custom local configuration
+_config.local.yml
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+# Python notebook outputs
+*.ipynb_checkpoints/
+# Talk map outputs (from your project)
+talkmap_out.ipynb
+# Docker
+.dockerignore
+# Kubernetes
+*.kubeconfig
+
+
+# =============================================================================
+# END OF .GITIGNORE
+# =============================================================================
+# Remember to run `git check-ignore -v <file>` to test patterns
+# Use `git ls-files --others --ignored --exclude-standard` to see what's ignored
+# =============================================================================
