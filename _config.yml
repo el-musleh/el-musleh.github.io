@@ -347,8 +347,8 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
 timezone: Europe/Berlin # (valid IANA timezone name) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
@@ -361,7 +361,7 @@ plugins:
   - jekyll-seo-tag  # Handles titles and social media previews.
   - jekyll-redirect-from  # Essential if you ever rename a post URL so you don't lose SEO rank.
   - jemoji  # Adds emoji support GitHub-style emoji codes
-  - jekyll-minifier # Makes your HTML/CSS/JS tiny for fast loading.
+  # - jekyll-minifier # Makes your HTML/CSS/JS tiny for fast loading.
 
 # Mimic GitHub Pages with --safe
 whitelist:
