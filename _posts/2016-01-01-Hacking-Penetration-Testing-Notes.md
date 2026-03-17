@@ -4,6 +4,8 @@ date: 2016-01-01
 last_modified_at: 2026-03-16
 collection: experience
 published: true 
+header:
+  teaser: "posts/GenAI_Gemini_Hacking_archive.png"
 categories: 
   - Security
   - Hacking

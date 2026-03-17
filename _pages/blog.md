@@ -7,13 +7,8 @@ redirect_from:
   - /year-archive/
 ---
 
+{% include base_path %}
+
 {% for post in site.posts %}
-  <article style="margin-bottom: 20px;">
-    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <p style="font-size: 0.9em; color: #666;">
-      {{ post.date | date: "%B %d, %Y" }}
-    </p>
-    <!-- {{ post.excerpt }} -->
-  </article>
-  <!-- <hr> -->
+  {% include archive-single-no-excerpt.html %}
 {% endfor %}

@@ -1,0 +1,41 @@
+---
+layout: archive
+permalink: /categories/
+title: "Posts by Categories"
+author_profile: true
+---
+
+{% include base_path %}
+{% include group-by-array collection=site.posts field="categories" %}
+
+{% for category in group_names %}
+  {% assign posts = group_items[forloop.index0] %}
+  <h2 id="{{ category | slugify }}" class="archive__subtitle">{{ category }}</h2>
+  {% for post in posts %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endfor %}
+
+<script>
+  function filterCategories() {
+    const hash = window.location.hash.slice(1);
+    const elements = document.querySelectorAll('h2.archive__subtitle, .list__item');
+    elements.forEach(el => el.style.display = 'block');  // Default: show all
+
+    if (hash) {
+      elements.forEach(el => el.style.display = 'none');  // Hide all
+      const targetH2 = document.getElementById(hash);
+      if (targetH2) {
+        targetH2.style.display = 'block';
+        let next = targetH2.nextElementSibling;
+        while (next && next.tagName !== 'H2') {
+          next.style.display = 'block';
+          next = next.nextElementSibling;
+        }
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', filterCategories);
+  window.addEventListener('hashchange', filterCategories);
+</script>

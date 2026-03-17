@@ -1,76 +1,110 @@
 #!/usr/bin/env python3
 """
-Script to generate skills-feed.json from _data/cv.json
+Script to generate skills-feed.json from Jekyll site content.
+Reads tags from front matter of experience, projects, publications, and education files.
 """
 
 import json
 import os
+import re
+import yaml
+
+def parse_front_matter(content):
+    """Parse YAML front matter from file content."""
+    if content.startswith('---'):
+        parts = content.split('---', 2)
+        if len(parts) >= 3:
+            front_matter = parts[1]
+            body = parts[2]
+            try:
+                data = yaml.safe_load(front_matter)
+                return data, body
+            except yaml.YAMLError:
+                return {}, content
+    return {}, content
+
+def extract_inline_skills(body):
+    """Extract inline skill tags from body content using skill.html include."""
+    # Match skill.html includes like {% include skill.html text="C#" %}
+    skill_pattern = r'{%\s*include\s+skill\.html\s+text="([^"]+)" %}'
+    matches = re.findall(skill_pattern, body)
+    return matches
 
 def generate_skills_feed(repo_root):
     """
-    Generates a skills-feed.json file from the cv.json data.
+    Generates a skills-feed.json file from Jekyll site content.
     """
-    cv_json_path = os.path.join(repo_root, '_data', 'cv.json')
-    skills_feed_path = os.path.join(repo_root, 'assets', 'skills-feed.json')
-
-    if not os.path.exists(cv_json_path):
-        print(f"Error: {cv_json_path} not found. Please run the script to generate cv.json first.")
-        return
-
-    with open(cv_json_path, 'r', encoding='utf-8') as f:
-        cv_data = json.load(f)
-
-    all_docs = []
-
-    # Process publications
-    if 'publications' in cv_data:
-        for pub in cv_data['publications']:
-            doc = {
-                'title': pub.get('name', ''),
-                'url': pub.get('website', ''),
-                'tags': [],
-                'content': pub.get('summary', '')
-            }
-            all_docs.append(doc)
-
-    # Process portfolio
-    if 'portfolio' in cv_data:
-        for item in cv_data['portfolio']:
-            doc = {
-                'title': item.get('name', ''),
-                'url': item.get('url', ''),
-                'tags': [],
-                'content': item.get('description', '')
-            }
-            all_docs.append(doc)
-            
-    # Process work
-    if 'work' in cv_data:
-        for item in cv_data['work']:
-            doc = {
-                'title': item.get('company', ''),
-                'url': item.get('website', ''),
-                'tags': [],
-                'content': "
-".join(item.get('highlights', []))
-            }
-            all_docs.append(doc)
-
-    # Extract skills and associate them with documents
-    if 'skills' in cv_data:
-        for skill_category in cv_data['skills']:
-            for skill in skill_category.get('keywords', []):
-                for doc in all_docs:
-                    if skill.lower() in doc['content'].lower() and skill not in doc['tags']:
-                        doc['tags'].append(skill)
+    # Define collections to process
+    collections = ['experience', 'projects', 'publications', 'education']
     
-    # Remove docs without tags
-    all_docs = [doc for doc in all_docs if doc['tags']]
-
+    all_docs = []
+    
+    for collection in collections:
+        collection_path = os.path.join(repo_root, '_' + collection)
+        
+        if not os.path.isdir(collection_path):
+            continue
+        
+        # Process each file in the collection
+        for filename in os.listdir(collection_path):
+            if not filename.endswith('.md') and not filename.endswith('.html'):
+                continue
+            
+            file_path = os.path.join(collection_path, filename)
+            
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+            except (IOError, UnicodeDecodeError):
+                continue
+            
+            front_matter, body = parse_front_matter(content)
+            
+            if not front_matter:
+                continue
+            
+            # Get title and URL
+            title = front_matter.get('title', '')
+            url = front_matter.get('url', '')
+            
+            # If no URL, generate one from the filename
+            if not url:
+                url = f"/{collection}/{os.path.splitext(filename)[0]}"
+            
+            # Get tags from front matter
+            tags = front_matter.get('tags', [])
+            if not isinstance(tags, list):
+                tags = []
+            
+            # Also extract inline skill tags from body
+            inline_tags = extract_inline_skills(body)
+            all_tags = list(set(tags + inline_tags))
+            
+            # Only include docs that have tags from front matter or inline includes
+            if all_tags:
+                doc = {
+                    'title': title,
+                    'url': url,
+                    'tags': all_tags
+                }
+                all_docs.append(doc)
+    
+    # Sort docs by title
+    all_docs.sort(key=lambda x: x.get('title', ''))
+    
+    # Write to file
+    skills_feed_path = os.path.join(repo_root, 'assets', 'skills-feed.json')
     with open(skills_feed_path, 'w', encoding='utf-8') as f:
         json.dump(all_docs, f, indent=2)
-
+    
     print(f"Successfully generated {skills_feed_path}")
+    print(f"  - Total documents: {len(all_docs)}")
+    
+    # Count total unique tags
+    all_tags = set()
+    for doc in all_docs:
+        all_tags.update(doc.get('tags', []))
+    print(f"  - Unique tags: {len(all_tags)}")
 
 if __name__ == '__main__':
     repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))

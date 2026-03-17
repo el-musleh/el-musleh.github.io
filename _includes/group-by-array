@@ -1,9 +1,46 @@
-<!--
-# Jekyll Group-By-Array 0.1.0
-# https://github.com/mushishi78/jekyll-group-by-array
-# © 2015 Max White <mushishi78@gmail.com>
-# MIT License
--->
+{% assign tagged_items = '' | split: '' %}
+{% for coll_name in collections %}
+  {% for item in site[coll_name] %}
+    {% if item.tags %}
+      {% assign tagged_items = tagged_items | push: item %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% assign sorted_tagged = tagged_items | sort: 'date' | reverse %}
+
+<div class="taxonomy__index">
+  {% for item in sorted_tagged %}
+    <div class="list__item" data-tags="{% for tag in item.tags %}{{ tag | slugify }}{% unless forloop.last %} {% endunless %}{% endfor %}">
+      {% include archive-single.html %}
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  function filterTags() {
+    const hash = window.location.hash.slice(1);
+    const items = document.querySelectorAll('.taxonomy__index .list__item');
+    items.forEach(item => {
+      const tags = item.dataset.tags || '';
+      if (hash && !tags.includes(hash)) {
+        item.style.display = 'none';
+      } else {
+        item.style.display = 'block';
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', filterTags);
+  window.addEventListener('hashchange', filterTags);
+</script>
+
+<style>
+  /* Tags page: show only post titles, hide excerpts/dates/meta/citations */
+  .archive__item-title ~ * {
+    display: none !important;
+  }
+</style>
 
 <!-- Initialize -->
 {% assign __empty_array = '' | split: ',' %}

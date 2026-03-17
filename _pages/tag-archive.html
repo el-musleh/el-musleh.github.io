@@ -6,7 +6,9 @@ author_profile: true
 ---
 
 {% include base_path %}
-{% include group-by-array collection=site.posts field="tags" %}
+{% assign all_content = site.posts | concat: site.pages | concat: site.experience | concat: site.education | concat: site.talks | concat: site.projects | concat: site.portfolio | concat: site.publications | concat: site.teaching %}
+{% assign combined_collection = all_content | sort: "date" | reverse %}
+{% include group-by-array collection=combined_collection field="tags" %}
 
 {% for tag in group_names %}
   {% assign posts = group_items[forloop.index0] %}
@@ -15,3 +17,43 @@ author_profile: true
     {% include archive-single.html %}
   {% endfor %}
 {% endfor %}
+
+<script>
+  function filterTags() {
+    const hash = window.location.hash.slice(1);
+    const headers = document.querySelectorAll('h2.archive__subtitle');
+    const items = document.querySelectorAll('.list__item');
+
+    // If no hash, show all
+    if (!hash) {
+      headers.forEach(el => el.style.display = 'block');
+      items.forEach(el => el.style.display = 'block');
+      return;
+    }
+
+    // Hide all by default
+    headers.forEach(el => el.style.display = 'none');
+    items.forEach(el => el.style.display = 'none');
+
+    // Show only matching tag section
+    const targetHeader = document.getElementById(hash);
+    if (targetHeader) {
+      targetHeader.style.display = 'block';
+      let next = targetHeader.nextElementSibling;
+      while (next && next.tagName !== 'H2') {
+        next.style.display = 'block';
+        next = next.nextElementSibling;
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', filterTags);
+  window.addEventListener('hashchange', filterTags);
+</script>
+
+<style>
+  /* Tags page: show only post titles, hide excerpts/dates/meta/citations */
+  .archive__item-title ~ * {
+    display: none !important;
+  }
+</style>

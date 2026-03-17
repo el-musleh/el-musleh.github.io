@@ -5,6 +5,13 @@ collection: experience
 published: true  
 header:
   teaser: "posts/GenAI_Gemini_Hack_WiFi.png"
+categories: 
+  - Security
+  - Hacking
+tags:
+  - Penetration-Testing
+  - Kali-Linux
+  - Security-Tools
 ---
 
 Learn about [aircrack-ng](https://www.kali.org/tools/aircrack-ng/)
