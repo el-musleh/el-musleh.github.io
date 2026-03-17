@@ -20,26 +20,23 @@ author_profile: true
 
 <script>
   function filterTags() {
-    const hash = window.location.hash.slice(1);
-    const headers = document.querySelectorAll('h2.archive__subtitle');
-    const items = document.querySelectorAll('.list__item');
+    var hash = window.location.hash.slice(1);
+    var headers = document.querySelectorAll('h2.archive__subtitle');
+    var items = document.querySelectorAll('.list__item');
 
-    // If no hash, show all
     if (!hash) {
-      headers.forEach(el => el.style.display = 'block');
-      items.forEach(el => el.style.display = 'block');
+      headers.forEach(function(el) { el.style.display = 'block'; });
+      items.forEach(function(el) { el.style.display = 'block'; });
       return;
     }
 
-    // Hide all by default
-    headers.forEach(el => el.style.display = 'none');
-    items.forEach(el => el.style.display = 'none');
+    headers.forEach(function(el) { el.style.display = 'none'; });
+    items.forEach(function(el) { el.style.display = 'none'; });
 
-    // Show only matching tag section
-    const targetHeader = document.getElementById(hash);
+    var targetHeader = document.getElementById(hash);
     if (targetHeader) {
       targetHeader.style.display = 'block';
-      let next = targetHeader.nextElementSibling;
+      var next = targetHeader.nextElementSibling;
       while (next && next.tagName !== 'H2') {
         next.style.display = 'block';
         next = next.nextElementSibling;

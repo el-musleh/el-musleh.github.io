@@ -18,16 +18,16 @@ author_profile: true
 
 <script>
   function filterCategories() {
-    const hash = window.location.hash.slice(1);
-    const elements = document.querySelectorAll('h2.archive__subtitle, .list__item');
-    elements.forEach(el => el.style.display = 'block');  // Default: show all
+    var hash = window.location.hash.slice(1);
+    var elements = document.querySelectorAll('h2.archive__subtitle, .list__item');
+    elements.forEach(function(el) { el.style.display = 'block'; });
 
     if (hash) {
-      elements.forEach(el => el.style.display = 'none');  // Hide all
-      const targetH2 = document.getElementById(hash);
+      elements.forEach(function(el) { el.style.display = 'none'; });
+      var targetH2 = document.getElementById(hash);
       if (targetH2) {
         targetH2.style.display = 'block';
-        let next = targetH2.nextElementSibling;
+        var next = targetH2.nextElementSibling;
         while (next && next.tagName !== 'H2') {
           next.style.display = 'block';
           next = next.nextElementSibling;

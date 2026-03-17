@@ -27,8 +27,10 @@ I’m always happy to connect, exchange experiences, or just have a friendly cha
 **N.B.** Share this GitHub repo or the URL with your favorite LLM and ask it whatever you’d like about my work.
 
 ## Technical Skills
-<div id="cv-skills-cloud" class="skills-container">
-  <!-- 1. Static Fallback (For SEO and fast loading of YAML tags) -->
+<div id="cv-skills-cloud" class="skills-container"
+     data-feed-url='{{ "/assets/skills-feed.json" | relative_url }}'
+     data-skills-url='{{ "/skills/" | relative_url }}'>
+  <!-- Static Fallback (For SEO and fast loading of YAML tags) -->
   {% assign all_docs = site.education | concat: site.experience | concat: site.projects | concat: site.publications %}
   {% assign raw_tags = "" | split: "" %}
   {% for doc in all_docs %}
@@ -45,73 +47,7 @@ I’m always happy to connect, exchange experiences, or just have a friendly cha
   {% endfor %}
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const container = document.getElementById('cv-skills-cloud');
-  
-  // Fetch the same feed used by the Skills Matrix
-  const feedUrl = '{{ "/assets/skills-feed.json" | relative_url }}';
-  console.debug('Fetching skills feed from', feedUrl);
-
-  fetch(feedUrl)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to fetch skills feed: ' + response.status + ' ' + response.statusText);
-      }
-      return response.json();
-    })
-    .then(data => {
-      if (!Array.isArray(data)) throw new Error('Skills feed JSON is not an array');
-
-      const allSkills = new Set();
-
-      data.forEach(doc => {
-        // A. Add Front Matter Tags
-        if (doc.tags && Array.isArray(doc.tags)) {
-          doc.tags.forEach(t => allSkills.add(t));
-        }
-        
-        // B. Add Inline Tags (Parse the HTML content)
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = doc.content;
-        const inlineTags = tempDiv.querySelectorAll('.cv-skill-tag');
-        
-        inlineTags.forEach(tagElem => {
-          const name = tagElem.getAttribute('data-skill');
-          if (name) allSkills.add(name);
-        });
-      });
-
-      // C. Re-render the container with the complete, sorted list
-      if (allSkills.size > 0) {
-        container.innerHTML = ''; // Clear static fallback
-        
-        const sortedSkills = Array.from(allSkills).sort((a, b) => a.localeCompare(b));
-
-        sortedSkills.forEach(skill => {
-          const a = document.createElement('a');
-          // encodeURIComponent handles C# -> C%23 and C++ -> C%2B%2B correctly
-          a.href = `{{ '/skills/' | relative_url }}?tag=${encodeURIComponent(skill)}`;
-          a.className = 'cv-skill-badge';
-          a.textContent = skill;
-          a.title = `View projects using ${skill}`;
-          container.appendChild(a);
-        });
-      }
-    })
-    .catch(err => {
-      console.error('Failed to load unified skills cloud:', err);
-      if (container) {
-        const note = document.createElement('div');
-        note.style.fontSize = '0.9em';
-        note.style.color = '#666';
-        note.style.marginTop = '8px';
-        note.textContent = 'Live skills cloud unavailable; showing static skill list.';
-        container.appendChild(note);
-      }
-    });
-});
-</script>
+<script src="{{ '/assets/js/skills-cloud.js' | relative_url }}"></script>
 
 ## Work Experience
 {% for post in site.experience reversed %}
