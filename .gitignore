@@ -619,9 +619,6 @@ benchmark/benchmarks/
 # =============================================================================
 # Documentation build outputs and large asset files
 
-# PDF/EPUB builds
-*.pdf
-*.epub
 # Generated documentation
 site/
 docs/_site/
