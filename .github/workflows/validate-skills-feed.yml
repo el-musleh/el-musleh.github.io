@@ -1,0 +1,153 @@
+name: Validate Skills Feed
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '_pages/skills.md'
+      - '_includes/skill.html'
+      - '_posts/**'
+      - '_projects/**'
+      - '_publications/**'
+      - '_experience/**'
+      - '_education/**'
+      - 'assets/skills-feed.json'
+  pull_request:
+    paths:
+      - '_pages/skills.md'
+      - '_includes/skill.html'
+      - '_posts/**'
+      - '_projects/**'
+      - '_publications/**'
+      - '_experience/**'
+      - '_education/**'
+      - 'assets/skills-feed.json'
+
+jobs:
+  validate-skills-feed:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+
+    - name: Install Jekyll site dependencies
+      run: bundle install
+
+    - name: Build Jekyll site
+      run: bundle exec jekyll build --verbose 2>&1 | tee build.log
+
+    - name: Check if skills-feed.json was generated
+      id: check_skills_file
+      run: |
+        if [ -f "_site/assets/skills-feed.json" ]; then
+          echo "skills_file_exists=true" >> $GITHUB_OUTPUT
+          echo "skills-feed.json was generated"
+        else
+          echo "skills_file_exists=false" >> $GITHUB_OUTPUT
+          echo "skills-feed.json was NOT generated"
+          exit 1
+        fi
+
+    - name: Validate JSON syntax
+      if: steps.check_skills_file.outputs.skills_file_exists == 'true'
+      run: |
+        python3 -c '
+        import json
+        import sys
+
+        try:
+            with open("_site/assets/skills-feed.json", "r", encoding="utf-8") as f:
+                content = f.read()
+                
+            # Check if the file contains Liquid template tags (indicating Jekyll did not process it)
+            if "{%" in content or "{{" in content or "layout: null" in content or "concat:" in content:
+                print("ERROR: skills-feed.json contains unprocessed Liquid template tags!")
+                print("The file appears to be a Jekyll template that was not processed.")
+                print("\nFirst 500 characters of the file:")
+                print(content[:500])
+                sys.exit(1)
+            
+            # Try to parse as JSON
+            data = json.loads(content)
+            
+            # Validate its an array
+            if not isinstance(data, list):
+                print(f"ERROR: skills-feed.json should be an array, got {type(data).__name__}")
+                sys.exit(1)
+            
+            print(f"Valid JSON: {len(data)} items in array")
+            
+            # Check for common issues in each item
+            for i, item in enumerate(data):
+                if "title" not in item:
+                    print(f"Warning: Item {i} missing title field")
+                if "url" not in item:
+                    print(f"Warning: Item {i} missing url field")
+                    
+            print("\nJSON syntax validation passed!")
+            
+        except json.JSONDecodeError as e:
+            print(f"JSON Syntax Error: {e}")
+            print(f"\nError at line {e.lineno}, column {e.colno}")
+            print(f"Position: {e.pos}")
+            # Show context around the error
+            if e.pos:
+                start = max(0, e.pos - 100)
+                end = min(len(content), e.pos + 100)
+                print(f"\nContext around error:")
+                print(content[start:end])
+            sys.exit(1)
+        except Exception as e:
+            print(f"Error: {e}")
+            sys.exit(1)
+        '
+
+    - name: Check skills-feed.json can be fetched
+      if: steps.check_skills_file.outputs.skills_file_exists == 'true'
+      run: |
+        SIZE=$(wc -c < _site/assets/skills-feed.json)
+        if [ "$SIZE" -lt 100 ]; then
+          echo "skills-feed.json is too small ($SIZE bytes)"
+          exit 1
+        fi
+        echo "skills-feed.json size is reasonable ($SIZE bytes)"
+        
+        if grep -q '\[\]' _site/assets/skills-feed.json; then
+          echo "Warning: skills-feed.json appears to be empty"
+        fi
+
+    - name: Display skills-feed.json structure
+      if: steps.check_skills_file.outputs.skills_file_exists == 'true'
+      run: |
+        python3 -c '
+        import json
+        
+        with open("_site/assets/skills-feed.json", "r") as f:
+            data = json.load(f)
+        
+        print("\nSkills Feed Statistics:")
+        print(f"   Total documents: {len(data)}")
+        
+        # Collect all unique tags
+        all_tags = set()
+        for doc in data:
+            if "tags" in doc and doc["tags"]:
+                all_tags.update(doc["tags"])
+        
+        print(f"   Unique tags/skills: {len(all_tags)}")
+        
+        if all_tags:
+            print(f"\nSkills found: {', '.join(sorted(all_tags)[:20])}")
+            if len(all_tags) > 20:
+                print(f"   ... and {len(all_tags) - 20} more")
+        else:
+            print("\nWarning: No skills/tags found in the feed!")
+            print("   This means clicking on skills will not show any results.")
+        '
