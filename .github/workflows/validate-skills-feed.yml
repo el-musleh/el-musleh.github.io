@@ -156,5 +156,5 @@ jobs:
                 print(f"   ... and {len(all_tags) - 20} more")
         else:
             print("\nNote: No skills/tags found in the feed.")
-            print("   This is expected if cv.json has no skills defined.")
+            print("   This is expected if no skills are defined in the front matter.")
         '

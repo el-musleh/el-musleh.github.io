@@ -5,12 +5,10 @@ on:
     branches:
       - master
     paths:
-      - '_data/cv.json'
       - '_publications/**'
       - '_portfolio/**'
       - '_experience/**'
       - 'scripts/generate_skills_feed.py'
-      - 'scripts/cv_markdown_to_json.py'
 
 jobs:
   build:
@@ -28,10 +26,6 @@ jobs:
       run: |
         pip install PyYAML
 
-    - name: Generate cv.json
-      run: |
-        python3 scripts/cv_markdown_to_json.py --input _pages/cv.md --output _data/cv.json --config _config.yml
-
     - name: Generate skills-feed.json
       run: |
         python3 scripts/generate_skills_feed.py
@@ -40,6 +34,6 @@ jobs:
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add assets/skills-feed.json _data/cv.json
-        git commit -m "Automated update of skills feed and CV" || echo "No changes to commit"
+        git add assets/skills-feed.json
+        git commit -m "Automated update of skills feed" || echo "No changes to commit"
         git push
