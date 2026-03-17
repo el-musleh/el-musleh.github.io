@@ -12,6 +12,8 @@ authors: ["Mohammad El Musleh"]
 tags: [requirement, test data, UML, state machine diagram, black-box testing, test case generation, Neo4j, GraphQL API]
 ---
 
+I developed a scalable application using {% include skill.html text="C#" %} and {% include skill.html text=".NET" %}.
+
 The manual approach in software testing is considered as expensive, error-prone, and time-consuming activity since it depends highly on the test engineers. As well, the process of software testing requires proper planning and resources to design the test cases. For this reason, any approach that can be used to enhance or automate the current testing process is necessary.
 
 This thesis introduces an approach to transform the Unified Modeling Language (UML) behavioral state machines diagram into a graph database inside Neo4j, a graph database software. Moreover, a framework is proposed that fetches test data from the graph database.

@@ -13,7 +13,7 @@ redirect_from:
     <p style="font-size: 0.9em; color: #666;">
       {{ post.date | date: "%B %d, %Y" }}
     </p>
-    {{ post.excerpt }}
+    <!-- {{ post.excerpt }} -->
   </article>
-  <hr>
+  <!-- <hr> -->
 {% endfor %}

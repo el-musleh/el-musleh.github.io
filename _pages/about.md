@@ -2,17 +2,191 @@
 permalink: /
 title: "About me"
 author_profile: true
+description: "C#/C++ (Embedded) Software Engineer | Leveraging \"Vibe Coding\" to build scalable industrial solutions."
 redirect_from: 
   - /about/
   - /about.html
+  - /resume
+  - /cv
 ---
 
-Hi 👋, I’m Mohammad El Musleh, an Embedded Systems Engineer with 3+ years of experience in developing, testing, and optimizing software solutions across industrial automation and service tools. I’m skilled in C#, C/C++, and Python, with a strong focus on building scalable applications that follow clean architecture, robust testing principles, and clean code practices.
-
-I hold a Master’s in Embedded Systems from Uppsala University and a Bachelor’s in Computer Engineering. My career began with an R&D collaboration at NEVS on automated software validation, which I followed by developing service tools for Bosch Thermotechnik across their Swedish and German locations.
-My main technical interests include AI integration, robotics, process automation, and software architecture.
-
+{% include base_path %}
 
 <div class="cv-download-links">
-  <a href="{{ base_path }}/cv/" class="btn btn--info">📄 View my CV page</a>
+  <a href="{{ base_path }}/files/misc/Mohammad_El_Musleh_enCV.pdf" class="btn btn--info">🔽 Download CV as PDF</a>
+  <a href="{{ base_path }}/files/misc/el-musleh_contacts.vcf" class="btn btn--info">🔽 Download my contact information (vcf)</a>
+  <a href="https://calendly.com/mohammadmusleh3/30min" class="btn btn--info">🗓️ Schedule a 30-minute meeting</a>
 </div>
+<br>
+Hi 👋, I’m Mohammad. I build software that bridges the gap between hardware and intelligent automation, bringing 4+ years of experience in developing and optimizing solutions across industrial automation and service tools. Skilled in C#, C++, and C, I focus on building scalable applications using clean architecture, robust testing, and clean code practices.
+
+I’m a firm believer in "Vibe Coding" and AI-assisted development to boost productivity and gain rapid access to knowledge. By moving beyond the traditional “Google everything” mindset, I can prioritize architectural integrity and high-level problem solving. For this reason, I practice with AI to articulate requirements clearly enough to minimize the need for follow-up prompts.
+
+I’m always happy to connect, exchange experiences, or just have a friendly chat about tech, work, or the future of engineering.
+
+**N.B.** Share this GitHub repo or the URL with your favorite LLM and ask it whatever you’d like about my work.
+
+## Technical Skills
+<div id="cv-skills-cloud" class="skills-container">
+  <!-- 1. Static Fallback (For SEO and fast loading of YAML tags) -->
+  {% assign all_docs = site.education | concat: site.experience | concat: site.projects | concat: site.publications %}
+  {% assign raw_tags = "" | split: "" %}
+  {% for doc in all_docs %}
+    {% if doc.tags %}
+      {% assign raw_tags = raw_tags | concat: doc.tags %}
+    {% endif %}
+  {% endfor %}
+  {% assign unique_tags = raw_tags | uniq | sort %}
+  
+  {% for tag in unique_tags %}
+    <a href="{{ '/skills/' | relative_url }}?tag={{ tag | url_encode }}" class="cv-skill-badge">
+      {{ tag }}
+    </a>
+  {% endfor %}
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const container = document.getElementById('cv-skills-cloud');
+  
+  // Fetch the same feed used by the Skills Matrix
+  const feedUrl = '{{ "/assets/skills-feed.json" | relative_url }}';
+  console.debug('Fetching skills feed from', feedUrl);
+
+  fetch(feedUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch skills feed: ' + response.status + ' ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (!Array.isArray(data)) throw new Error('Skills feed JSON is not an array');
+
+      const allSkills = new Set();
+
+      data.forEach(doc => {
+        // A. Add Front Matter Tags
+        if (doc.tags && Array.isArray(doc.tags)) {
+          doc.tags.forEach(t => allSkills.add(t));
+        }
+        
+        // B. Add Inline Tags (Parse the HTML content)
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = doc.content;
+        const inlineTags = tempDiv.querySelectorAll('.cv-skill-tag');
+        
+        inlineTags.forEach(tagElem => {
+          const name = tagElem.getAttribute('data-skill');
+          if (name) allSkills.add(name);
+        });
+      });
+
+      // C. Re-render the container with the complete, sorted list
+      if (allSkills.size > 0) {
+        container.innerHTML = ''; // Clear static fallback
+        
+        const sortedSkills = Array.from(allSkills).sort((a, b) => a.localeCompare(b));
+
+        sortedSkills.forEach(skill => {
+          const a = document.createElement('a');
+          // encodeURIComponent handles C# -> C%23 and C++ -> C%2B%2B correctly
+          a.href = `{{ '/skills/' | relative_url }}?tag=${encodeURIComponent(skill)}`;
+          a.className = 'cv-skill-badge';
+          a.textContent = skill;
+          a.title = `View projects using ${skill}`;
+          container.appendChild(a);
+        });
+      }
+    })
+    .catch(err => {
+      console.error('Failed to load unified skills cloud:', err);
+      if (container) {
+        const note = document.createElement('div');
+        note.style.fontSize = '0.9em';
+        note.style.color = '#666';
+        note.style.marginTop = '8px';
+        note.textContent = 'Live skills cloud unavailable; showing static skill list.';
+        container.appendChild(note);
+      }
+    });
+});
+</script>
+
+## Work Experience
+{% for post in site.experience reversed %}
+### [{{ post.title }}]({{ post.url }})
+*{{ post.venue }} | {{ post.excerpt }}*
+  {% if post.bullets %}
+  <ul>
+    {% for bullet in post.bullets %}
+      <li>{{ bullet }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endfor %}
+
+## Education
+{% for post in site.education reversed %}
+### [{{ post.title }}]({{ post.url }})
+*{{ post.venue }} | {{ post.excerpt }}*
+{% endfor %}
+
+## Language Skills
+- **Arabic:** Mother Tongue
+- **English:** Proficient
+- **German:** Intermediate
+
+## Certifications, Workshops, and Awards
+- **Won the Carlsberg Hackathon 2020** - Carlsberg Group (*Nov 2020*)
+- Received **four certificates of honor** during bachelor's studies for maintaining a high GPA - Near East University (*Jun 2018*)
+    - *High Honour (GPA 3.64/4, 3.52/4)*
+    - *Honour (GPA 3.30/4, 3.22/4)*
+- Granted a half-tuition scholarship to study bachelor's at NEU (*Sep 2014*)
+
+<div class="cv-download-links">
+<a href="{{ base_path }}/certifications/" class="btn btn--info">🎓️ View my completed certifications.</a>
+</div>
+
+## Publications
+{% assign latest_publications = site.publications | slice: 0, 3 %}
+{% for post in latest_publications %}
+  <article class="archive__item archive__item--compact">
+    <h2 class="archive__item-title no_toc"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p class="archive__item-excerpt">
+      {{ post.citation | default: post.excerpt | strip_newlines | truncatewords: 50 }}
+    </p>
+  </article>
+{% endfor %}
+
+<div class="cv-download-links">
+<a href="{{ '/publications/' | relative_url }}" class="btn btn--info">🛠️ View all publications.</a>
+</div>
+
+## Projects
+{% assign latest_projects = site.projects | slice: 0, 3 %}
+{% for post in latest_projects %}
+  <article class="archive__item archive__item--compact">
+    <h2 class="archive__item-title no_toc"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p class="archive__item-excerpt">
+      {{ post.excerpt | markdownify | strip_html | strip_newlines | truncatewords: 50 }}
+    </p>
+  </article>
+{% endfor %}
+
+<div class="cv-download-links">
+<a href="{{ '/projects/' | relative_url }}" class="btn btn--info">🛠️ View all projects.</a>
+</div>
+
+<!--## Talks
+  <ul>{% for post in site.talks reversed %}
+    {% include archive-single-talk-cv.html  %}
+  {% endfor %}</ul> -->
+  
+<!--## Teaching
+  <ul>{% for post in site.teaching reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul> -->
+  
+<!--## Service and leadership
+- Currently signed in to 43 different slack teams -->

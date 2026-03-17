@@ -1,7 +1,7 @@
 # Academic Pages
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 
-![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
+![Academic Pages template example](homepage-light.png "Academic Pages template example")
 
 # Quick Start
 
@@ -16,6 +16,11 @@ bundle exec jekyll serve -l -H localhost
 The site will be available at `http://localhost:4000`. The `-l` flag enables live reload, and `-H localhost` ensures the server binds to localhost.
 
 ---
+
+
+## Additional note
+[Kramdown Cheatsheet](https://liamhsieh.info/blog/kramdown-cheatsheet)
+
 
 # Getting Started
 

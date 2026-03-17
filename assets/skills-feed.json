@@ -5,7 +5,7 @@ layout: null
   {% comment %} 
     Concatenate all collections you want to scan for skills 
   {% endcomment %}
-  {% assign all_docs = site.education | concat: site.experience | concat: site.portfolio | concat: site.publications | concat: site.posts %}
+  {% assign all_docs = site.education | concat: site.experience | concat: site.projects | concat: site.publications | concat: site.posts %}
   
   {% for doc in all_docs %}
     {
