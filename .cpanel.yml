@@ -1,7 +1,10 @@
 ---
 deployment:
   tasks:
+    - bundle install
+    - bundle exec jekyll build
     - export DEPLOYPATH=/home/elmurjmz/public_html
-    - /bin/rsync -av --delete --exclude-from='.rsync-exclude' ./ $DEPLOYPATH
+    - rm -rf $DEPLOYPATH/*
+    - /bin/cp -r ./_site/* $DEPLOYPATH/
     - /bin/chmod 755 $DEPLOYPATH
     - /bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} +
