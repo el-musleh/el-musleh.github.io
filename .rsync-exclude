@@ -1,0 +1,8 @@
+.git/
+.cpanel.yml
+.rsync-exclude
+.gitignore
+README.md
+# Add anything else you don't want on your live site below:
+node_modules/
+tests/

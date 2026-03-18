@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/elmurjmz/public_html
+    - /bin/rsync -av --delete --exclude-from='.rsync-exclude' ./ $DEPLOYPATH
+    - /bin/chmod 755 $DEPLOYPATH
+    - /bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} +
