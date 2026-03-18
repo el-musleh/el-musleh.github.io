@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Mohammad El Musleh
+N:El-Musleh;Mohammad;;Mr.;
+EMAIL;TYPE=INTERNET;TYPE=WORK:mohammad.elmusleh@outlook.com
+TEL;TYPE=CELL:+49 1515 4335366
+ADR;TYPE=WORK:;;Kirchheimer str. 40;Wernau;;73249;DE;Kirchheimer str. 40\n7
+ 3249 Wernau\nDE
+TITLE:Software Developer
+item1.URL:https\://www.el-musleh.github.io
+item1.X-ABLabel:Website
+END:VCARD

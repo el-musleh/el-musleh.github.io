@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/elmurjmz/public_html
+    - rm -rf $DEPLOYPATH/*
+    - /bin/cp -r ./_site/* $DEPLOYPATH/
+    - /bin/chmod 755 $DEPLOYPATH
+    - /bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} +
