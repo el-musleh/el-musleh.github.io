@@ -275,7 +275,7 @@ vendor/bundle/
 # Gemfile.lock (optional - often committed for production)
 # Gemfile.lock
 # Jekyll build output
-# _site/  # Committed for cPanel deployment
+_site/
 # Jekyll metadata
 .jekyll-cache/
 .jekyll-metadata
