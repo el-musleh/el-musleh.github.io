@@ -15,6 +15,10 @@ tags:
   - Security-Tools
 ---
 
+<div class="notice--info" markdown="1">
+**🤖 AI Disclosure:** For transparency, the content of this page was partially or mainly created with AI assistance tools.
+</div>
+
 > **Note:** These are my early notes from 2016 when I was learning penetration testing. Some tools have evolved, but the fundamentals remain the same.
 
 Diving into cybersecurity was one of the most challenging but rewarding things I've done. Here's what I learned setting up my Kali Linux environment and the essential tools I used.

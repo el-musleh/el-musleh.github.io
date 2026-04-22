@@ -3,13 +3,15 @@ layout: archive
 title: "Projects"
 permalink: /projects/
 author_profile: true
-redirect_from: 
+description: "Software, hardware, and AI projects by Mohammad El-Musleh — from embedded systems to hackathon builds."
+redirect_from:
   - /projects
 ---
 
 {% include base_path %}
 
 
-{% for post in site.projects %}
+{% assign sorted_projects = site.projects | sort: "date" | reverse %}
+{% for post in sorted_projects %}
   {% include archive-single.html %}
 {% endfor %}

@@ -1,0 +1,55 @@
+{% include base_path %}
+
+<div class="certification-item" style="margin-bottom: 0.8rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+  <a href="{{ post.url | relative_url }}" style="color: var(--text-color, #2c3e50); text-decoration: none; font-weight: 500; font-size: 0.95rem;" 
+     onmouseover="this.style.color='var(--link-hover-color, #3498db)'" 
+     onmouseout="this.style.color='var(--text-color, #2c3e50)'">
+    {{ post.title }}
+  </a>
+  
+  {% if post.issued_by %}
+    <span style="color: var(--muted-color, #666); font-size: 0.85rem;">
+      • {{ post.issued_by }}
+    </span>
+  {% endif %}
+  
+  {% if post.platform %}
+    <span style="color: var(--muted-color, #666); font-size: 0.85rem;">
+      • {{ post.platform }}
+    </span>
+  {% endif %}
+  
+  <span style="color: var(--secondary-color, #888); font-size: 0.85rem;">
+    • {{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}
+  </span>
+  
+  {% if post.verification_url %}
+    {% assign verification_url = post.verification_url | replace: '{{ base_path }}', '' %}
+    <a href="{{ verification_url | relative_url }}" target="_blank" 
+       style="color: var(--link-color, #3498db); text-decoration: none; font-size: 0.85rem;" 
+       onmouseover="this.style.color='var(--link-hover-color, #2980b9)'" 
+       onmouseout="this.style.color='var(--link-color, #3498db)'">
+      • <i class="fa fa-external-link" aria-hidden="true"></i> Verification
+    </a>
+  {% endif %}
+</div>
+
+<style>
+/* Light mode defaults */
+.certification-item {
+  --text-color: #2c3e50;
+  --muted-color: #666;
+  --secondary-color: #888;
+  --link-color: #3498db;
+  --link-hover-color: #2980b9;
+}
+
+/* Dark mode support - overrides light mode defaults */
+html[data-theme="dark"] .certification-item {
+  --text-color: #ffffff;
+  --muted-color: #e9ecef;
+  --secondary-color: #dee2e6;
+  --link-color: #66b3ff;
+  --link-hover-color: #4da6ff;
+}
+</style>

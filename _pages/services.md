@@ -1,6 +1,6 @@
 ---
 permalink: /services/
-title: "Products"
+title: "Services"
 author_profile: true
 redirect_from: 
   - /consultation

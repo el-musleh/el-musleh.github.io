@@ -33,24 +33,26 @@ These are the primary sections of the website:
 
 ## Projects
 
-{% for post in site.projects %}
+{% assign sorted_projects = site.projects | sort: "date" | reverse %}
+{% for post in sorted_projects %}
   - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
 ## Publications
 
-{% for post in site.publications %}
+{% assign sorted_publications = site.publications | sort: "date" | reverse %}
+{% for post in sorted_publications %}
   - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
 ## Experience
 
-{% for post in site.experience %}
+{% for post in site.experience reversed %}
   - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
 ## Education
 
-{% for post in site.education %}
+{% for post in site.education reversed %}
   - [{{ post.title }}]({{ post.url }})
 {% endfor %}

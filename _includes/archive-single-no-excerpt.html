@@ -63,15 +63,30 @@
     {% elsif post.citation %}
       <p>Recommended citation: {{ post.citation }}</p>
     {% elsif post.paperurl and post.bibtexurl %}
-      <p><a href=' {{ post.paperurl }} '>Download Paper</a> | <a href='{{ post.bibtexurl }}'>Download Bibtex</a></p>
+      <p><a href='{{ post.paperurl }}'>Download Paper</a> | <a href='{{ post.bibtexurl }}'>Download Bibtex</a></p>
     {% elsif post.paperurl %}
-      <p><a href=' {{ post.paperurl }} '>Download Paper</a></p>
+      <p><a href='{{ post.paperurl }}'>Download Paper</a></p>
     {% elsif post.slidesurl and post.bibtexurl %}
       <p><a href='{{ post.slidesurl }}'>Download Slides</a> | <a href='{{ post.bibtexurl }}'>Download Bibtex</a></p>
     {% elsif post.slidesurl %}
       <p><a href='{{ post.slidesurl }}'>Download Slides</a></p>
     {% elsif post.bibtexurl %}
       <p><a href='{{ post.bibtexurl }}'>Download Bibtex</a></p>
+    {% endif %}
+
+    {% if post.authors and post.authors.size > 0 %}
+      <p class="archive__item-authors">
+        <i class="fa fa-fw fa-users" aria-hidden="true"></i>
+        {{ post.authors | join: ", " }}
+      </p>
+    {% endif %}
+
+    {% if post.tags and post.tags.size > 0 %}
+      <div class="archive__item-tags" aria-label="Tags">
+        {% for tag in post.tags limit: 6 %}
+          <a href="{{ '/skills/' | relative_url }}?tag={{ tag | append: "" | cgi_escape }}" class="archive__item-tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
     {% endif %}
 
   </article>

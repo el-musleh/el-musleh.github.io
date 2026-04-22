@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Mohammad El-Musleh"
   pronouns         : # "He/Him"  
-  bio              : "Embedded Systems Engineer"
+  bio              : "(Embedded) Software Engineer"
   location         : "Germany"
   employer         : # Name of the company or the institution
   uri              : #"elmusleh.site"
@@ -257,6 +257,14 @@ collections:
     output: true
     permalink: /:collection/:path/
     sort_by: date
+  certifications:
+    output: true
+    permalink: /:collection/:path/
+    sort_by: date
+  languages:
+    output: true
+    permalink: /:collection/:path/
+    sort_by: level_order
 
 # These settings control how pages and collections are included in the site
 defaults:
@@ -334,6 +342,14 @@ defaults:
   - scope:
       path: ""
       type: experience
+    values:
+      layout: single
+      author_profile: true
+      share: false
+  # _languages
+  - scope:
+      path: ""
+      type: languages
     values:
       layout: single
       author_profile: true

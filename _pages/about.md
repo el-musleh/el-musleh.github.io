@@ -27,11 +27,11 @@ I’m always happy to connect, exchange experiences, or just have a friendly cha
 **N.B.** Share this GitHub repo or the URL with your favorite LLM and ask it whatever you’d like about my work.
 
 ## Technical Skills
-<div id="cv-skills-cloud" class="skills-container"
+<div id="cv-skills-cloud" class="skills-container" style="visibility: hidden"
      data-feed-url='{{ "/assets/skills-feed.json" | relative_url }}'
      data-skills-url='{{ "/skills/" | relative_url }}'>
   <!-- Static Fallback (For SEO and fast loading of YAML tags) -->
-  {% assign all_docs = site.education | concat: site.experience | concat: site.projects | concat: site.publications %}
+  {% assign all_docs = site.education | concat: site.experience | concat: site.projects | concat: site.publications | concat: site.certifications %}
   {% assign raw_tags = "" | split: "" %}
   {% for doc in all_docs %}
     {% if doc.tags %}
@@ -41,18 +41,19 @@ I’m always happy to connect, exchange experiences, or just have a friendly cha
   {% assign unique_tags = raw_tags | uniq | sort %}
   
   {% for tag in unique_tags %}
-    <a href="{{ '/skills/' | relative_url }}?tag={{ tag | url_encode }}" class="cv-skill-badge">
+    <a href="{{ '/skills/' | relative_url }}?tag={{ tag | cgi_escape }}" class="cv-skill-badge">
       {{ tag }}
     </a>
   {% endfor %}
 </div>
 
+<noscript><style>#cv-skills-cloud{visibility:visible!important}</style></noscript>
 <script src="{{ '/assets/js/skills-cloud.js' | relative_url }}"></script>
 
 ## Work Experience
 {% for post in site.experience reversed %}
 ### [{{ post.title }}]({{ post.url }})
-*{{ post.venue }} | {{ post.excerpt }}*
+<em>{{ post.venue }} | {% include duration-calculator.html start_date=post.date end_date=post.end_date %}</em>
   {% if post.bullets %}
   <ul>
     {% for bullet in post.bullets %}
@@ -69,30 +70,46 @@ I’m always happy to connect, exchange experiences, or just have a friendly cha
 {% endfor %}
 
 ## Language Skills
-- **Arabic:** Mother Tongue
-- **English:** Proficient
-- **German:** Intermediate
+{% assign ranked_languages = site.languages | sort: "title" | sort: "level_order" | reverse | slice: 0, 3 %}
+{% if ranked_languages.size > 0 %}
+<ul>
+{% for post in ranked_languages %}
+  <li><a href="{{ post.url }}">{{ post.title }}</a> — <em>{{ post.proficiency }}</em></li>
+{% endfor %}
+</ul>
+{% else %}
+No language entries available yet.
+{% endif %}
+
+<!-- <div class="cv-download-links">
+<a href="{{ '/languages/' | relative_url }}" class="btn btn--info">🌐 View all languages.</a>
+</div> -->
 
 ## Certifications, Workshops, and Awards
 - **Won the Carlsberg Hackathon 2020** - Carlsberg Group (*Nov 2020*)
 - Received **four certificates of honor** during bachelor's studies for maintaining a high GPA - Near East University (*Jun 2018*)
     - *High Honour (GPA 3.64/4, 3.52/4)*
     - *Honour (GPA 3.30/4, 3.22/4)*
-- Granted a half-tuition scholarship to study bachelor's at NEU (*Sep 2014*)
+{% assign latest_certifications = site.certifications | sort: "date" | reverse | slice: 0, 3 %}
+{% if latest_certifications.size > 0 %}
+<ul>
+{% for post in latest_certifications %}
+  <li><a href="{{ post.url }}">{{ post.title }}</a> — <em>{{ post.issued_by | default: post.platform }} | {{ post.date | date: "%B %Y" }}</em></li>
+{% endfor %}
+</ul>
+{% else %}
+No certifications entries available yet.
+{% endif %}
 
 <div class="cv-download-links">
-<a href="{{ base_path }}/certifications/" class="btn btn--info">🎓️ View my completed certifications.</a>
+<a href="{{ '/certifications/' | relative_url }}" class="btn btn--info">🎓️ View my completed certifications.</a>
 </div>
 
 ## Publications
-{% assign latest_publications = site.publications | slice: 0, 3 %}
+{% assign latest_publications = site.publications | sort: "date" | reverse | slice: 0, 3 %}
 {% for post in latest_publications %}
-  <article class="archive__item archive__item--compact">
-    <h2 class="archive__item-title no_toc"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <p class="archive__item-excerpt">
-      {{ post.citation | default: post.excerpt | strip_newlines | truncatewords: 50 }}
-    </p>
-  </article>
+### [{{ post.title }}]({{ post.url }})
+*{{ post.citation | default: post.excerpt | strip_newlines | truncatewords: 50 }}*
 {% endfor %}
 
 <div class="cv-download-links">
@@ -100,14 +117,10 @@ I’m always happy to connect, exchange experiences, or just have a friendly cha
 </div>
 
 ## Projects
-{% assign latest_projects = site.projects | slice: 0, 3 %}
+{% assign latest_projects = site.projects | sort: "date" | reverse | slice: 0, 3 %}
 {% for post in latest_projects %}
-  <article class="archive__item archive__item--compact">
-    <h2 class="archive__item-title no_toc"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <p class="archive__item-excerpt">
-      {{ post.excerpt | markdownify | strip_html | strip_newlines | truncatewords: 50 }}
-    </p>
-  </article>
+### [{{ post.title }}]({{ post.url }})
+*{{ post.excerpt | markdownify | strip_html | strip_newlines | truncatewords: 50 }}*
 {% endfor %}
 
 <div class="cv-download-links">

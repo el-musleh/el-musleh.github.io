@@ -12,7 +12,15 @@ tags:
   - Privacy
   - Technology
   - Opinion
+  - Data Security
+  - Google Drive
+  - Dropbox
+  - Encryption
 ---
+
+<div class="notice--info" markdown="1">
+**🤖 AI Disclosure:** For transparency, the content of this page was partially or mainly created with AI assistance tools.
+</div>
 
 In an era where every smartphone prompts us to back up our photos to the cloud, we need to stop and ask ourselves: are we preserving memories, or just falling into carefully designed company traps that pressure us to pay for more storage?
 
@@ -23,14 +31,14 @@ When you want to share files with others, email attachments with large sizes bec
 ### Alternatives to Consider
 
 - **Free Storage Tiers**: Many services offer free storage. You can still use the free 15 GB to share files with people.
-- **Password Managers with Storage**: Some services like Bitwarden offer 1 GB as part of their plans.
-- **Torrent-Based P2P Transfer**: Using torrents as peer-to-peer transfer is how it should be—and it's somehow private. This approach allows direct file sharing without relying on cloud infrastructure.
+- **{% include skill.html text="Password Managers" %} with Storage**: Some services like {% include skill.html text="Bitwarden" %} offer 1 GB as part of their plans.
+- **{% include skill.html text="Torrent-Based P2P Transfer" %}**: Using {% include skill.html text="torrents" %} as {% include skill.html text="peer-to-peer" %} transfer is how it should be—and it's somehow private. This approach allows direct file sharing without relying on cloud infrastructure.
 
 In worst-case situations, I'm willing to pay for one month of a service when urgently needed, rather than committing to ongoing subscriptions.
 
 ## Cloud Storage
 
-Google Drive remains the cheapest cloud storage option. I'll continue using it until I get a clear view and plan to switch to a better alternative with good privacy.
+{% include skill.html text="Google Drive" %} remains the cheapest {% include skill.html text="cloud storage" %} option. I'll continue using it until I get a clear view and plan to switch to a better alternative with good privacy.
 
 Here's a comprehensive comparison of various cloud storage services and their pricing:
 

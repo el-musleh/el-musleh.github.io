@@ -36,3 +36,16 @@ td {
 tr, td, th {
   vertical-align: middle;
 }
+
+/* Responsive table — horizontal scroll on small screens */
+.page__content table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+
+  @include breakpoint($medium) {
+    display: table;
+    overflow-x: visible;
+  }
+}

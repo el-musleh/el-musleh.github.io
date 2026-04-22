@@ -5,5 +5,6 @@ date: 2018-06-01
 excerpt: "Sep 2014 – Jun 2018"
 collection: education
 layout: single
+tags: [Computer Engineering, C Programming, Web Development, Python, Software Development]
 ---
 

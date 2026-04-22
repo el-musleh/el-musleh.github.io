@@ -19,7 +19,7 @@
   background-color: mix(#fff, $notice-color, 90%);
   border-radius: $border-radius;
   box-shadow: 0 1px 1px rgba($notice-color, 0.25);
-  color: var(--global-code-text-color);
+  color: var(--global-text-color);
 
   h4 {
     margin-top: 0 !important; /* override*/
@@ -97,4 +97,16 @@
 
 .notice--danger {
   @include notice($danger-color);
+}
+
+/* Dark mode: ensure text stays dark on light notice backgrounds */
+html[data-theme="dark"] {
+  .notice,
+  .notice--primary,
+  .notice--info,
+  .notice--warning,
+  .notice--success,
+  .notice--danger {
+    color: #333;
+  }
 }

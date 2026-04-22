@@ -11,4 +11,4 @@ permalink: /skills/
   <p>Loading skills...</p>
 </div>
 
-<script src="{{ '/assets/js/skills-page.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/skills-page.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

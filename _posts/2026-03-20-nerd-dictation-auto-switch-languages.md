@@ -14,6 +14,19 @@ tags:
   - VOSK
   - nerd-dictation
   - Productivity
+  - Voice-to-Text
+  - Automation
+  - Python
+  - Open Source
+---
+
+<div class="notice--info" markdown="1">
+**🤖 AI Disclosure:** For transparency, the content of this page was partially or mainly created with AI assistance tools.
+</div>
+
+# [VoxInput](https://github.com/BigRigVibeCoder/VoxInput)
+ 🎙️ Offline {% include skill.html text="voice-to-text" %} dictation for {% include skill.html text="Linux" %}. {% include skill.html text="Privacy-first" %}, works in any app. Powered by {% include skill.html text="Vosk" %}/{% include skill.html text="Whisper" %}. 
+
 ---
 
 Imagine you're writing a document in both English and Arabic. You need to switch between dictation modes every time you change languages. It's tedious. On Windows, you just press `Win+H` and start talking. But on Linux, you're stuck manually selecting the right speech model.
@@ -22,7 +35,7 @@ That's the problem I set out to solve.
 
 ## The Solution
 
-I created [nerd-dictation-auto-switch-languages](https://github.com/el-musleh/nerd-dictation-auto-switch-languages), a wrapper script that automatically detects your current keyboard layout and uses the appropriate speech-to-text model. No more manual switching. Just press one shortcut and start talking.
+I created [nerd-dictation-auto-switch-languages](https://github.com/el-musleh/nerd-dictation-auto-switch-languages), a wrapper script that automatically detects your current {% include skill.html text="keyboard layout" %} and uses the appropriate {% include skill.html text="speech-to-text" %} model. No more manual switching. Just press one shortcut and start talking.
 
 ### How It Works
 
@@ -38,13 +51,13 @@ I created [nerd-dictation-auto-switch-languages](https://github.com/el-musleh/ne
 
 | Component | Purpose |
 |-----------|---------|
-| [nerd-dictation](https://github.com/ideasman42/nerd-dictation) | Base speech-to-text tool using VOSK |
-| [VOSK Models](https://alphacephei.com/vosk/models) | Neural network models for each language |
-| [xkblayout-state](https://github.com/nonpop/xkblayout-state) | Detects current keyboard layout |
+| [{% include skill.html text="nerd-dictation" %}](https://github.com/ideasman42/nerd-dictation) | Base {% include skill.html text="speech-to-text" %} tool using {% include skill.html text="VOSK" %} |
+| [{% include skill.html text="VOSK Models" %}](https://alphacephei.com/vosk/models) | {% include skill.html text="Neural network" %} models for each language |
+| [{% include skill.html text="xkblayout-state" %}](https://github.com/nonpop/xkblayout-state) | Detects current {% include skill.html text="keyboard layout" %} |
 
 ### The Magic: Layout Detection
 
-The key innovation is detecting the keyboard layout in real-time:
+The key innovation is detecting the {% include skill.html text="keyboard layout" %} in real-time:
 
 ```bash
 # Get current keyboard layout
@@ -125,8 +138,8 @@ In your desktop settings:
 
 | Shortcut | Command |
 |----------|---------|
-| `Super+H` | `~/.nerd-dictation/dictate-start` |
-| `Super+Shift+H` | `~/.nerd-dictation/dictate-stop` |
+| `Super+H` | `~/.{% include skill.html text="nerd-dictation" %}/dictate-start` |
+| `Super+Shift+H` | `~/.{% include skill.html text="nerd-dictation" %}/dictate-stop` |
 
 ## Results
 
@@ -191,13 +204,13 @@ Adding new languages is straightforward — just download the VOSK model and add
 
 ## Conclusion
 
-Linux speech recognition has come a long way. With nerd-dictation-auto-switch-languages and VOSK, you can have seamless, offline, private voice typing that automatically adapts to your language. No cloud services, no subscriptions, just open-source speech-to-text that just works.
+{% include skill.html text="Linux" %} {% include skill.html text="speech recognition" %} has come a long way. With {% include skill.html text="nerd-dictation" %}-auto-switch-languages and {% include skill.html text="VOSK" %}, you can have seamless, offline, private {% include skill.html text="voice typing" %} that automatically adapts to your language. No cloud services, no subscriptions, just open-source speech-to-text that just works.
 
 The project is fully open-source and available on GitHub. Contributions welcome!
 
 ## Resources
 
-- [nerd-dictation-auto-switch-languages Repository](https://github.com/yourusername/nerd-dictation-auto-switch-languages)
+- [nerd-dictation-auto-switch-languages Repository](https://github.com/el-musleh/nerd-dictation-auto-switch-languages)
 - [nerd-dictation](https://github.com/ideasman42/nerd-dictation)
 - [VOSK Models](https://alphacephei.com/vosk/models)
 - [xkblayout-state](https://github.com/nonpop/xkblayout-state)

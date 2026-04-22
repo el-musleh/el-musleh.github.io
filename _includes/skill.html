@@ -1,5 +1,3 @@
-<a href="{{ '/skills/' | relative_url }}?tag={{ include.text | url_encode }}" 
-   class="cv-skill-tag" 
-   data-skill="{{ include.text | escape }}">
-  {{ include.text }}
-</a>
+<a href="{{ '/skills/' | relative_url }}?tag={{ include.text | append: "" | cgi_escape }}" 
+   class="{{ include.class | default: 'cv-skill-tag' }}"
+   data-skill="{{ include.text }}">{{ include.text }}</a>

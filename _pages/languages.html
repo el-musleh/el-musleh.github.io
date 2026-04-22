@@ -1,0 +1,18 @@
+---
+layout: archive
+title: "Languages"
+permalink: /languages/
+author_profile: true
+description: "Languages and communication proficiency overview."
+---
+
+{% include base_path %}
+
+{% assign sorted_languages = site.languages | sort: "title" | sort: "level_order" | reverse %}
+{% if sorted_languages.size > 0 %}
+  {% for post in sorted_languages %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+No languages have been added yet.
+{% endif %}

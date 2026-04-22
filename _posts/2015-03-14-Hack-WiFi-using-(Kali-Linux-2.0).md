@@ -9,12 +9,19 @@ categories:
   - Security
   - Hacking
 tags:
-  - Penetration-Testing
-  - Kali-Linux
-  - Security-Tools
+  - Penetration Testing
+  - Kali Linux
+  - Security Tools
+  - WiFi Hacking
+  - Aircrack-ng
+  - Network Security
 ---
 
-Learn about [aircrack-ng](https://www.kali.org/tools/aircrack-ng/)
+<div class="notice--info" markdown="1">
+**🤖 AI Disclosure:** For transparency, the content of this page was partially or mainly created with AI assistance tools.
+</div>
+
+Learn about [{% include skill.html text="aircrack-ng" %}](https://www.kali.org/tools/aircrack-ng/)
 
 
 # learn 
@@ -23,13 +30,13 @@ Learn about [aircrack-ng](https://www.kali.org/tools/aircrack-ng/)
 
 ### Network Attacks (Educational)
 
-- **airodump-ng** - WiFi packet sniffer. Captures packets in monitor mode to discover networks and clients. First step in any wireless assessment.
+- **{% include skill.html text="airodump-ng" %}** - {% include skill.html text="WiFi" %} packet sniffer. Captures packets in {% include skill.html text="monitor mode" %} to discover networks and clients. First step in any wireless assessment.
 
-- **airodump-ng** - Packet injection tool. Injects packets into wireless networks to trigger responses, useful for cracking WEP or deauth attacks.
+- **{% include skill.html text="aireplay-ng" %}** - {% include skill.html text="Packet injection" %} tool. Injects packets into wireless networks to trigger responses, useful for cracking {% include skill.html text="WEP" %} or {% include skill.html text="deauth" %} attacks.
 
-- **ARP spoofing** with arpspoof - Man-in-the-middle basics. Tricks devices into sending traffic through your machine by spoofing ARP tables. Foundation for many network attacks.
+- **{% include skill.html text="ARP spoofing" %}** with {% include skill.html text="arpspoof" %} - {% include skill.html text="Man-in-the-middle" %} basics. Tricks devices into sending traffic through your machine by spoofing {% include skill.html text="ARP tables" %}. Foundation for many network attacks.
 
-- **bettercap** - Modern Swiss army knife for network attacks. Does ARP spoofing, SSL stripping, packet sniffing, and more. More powerful than individual tools.
+- **{% include skill.html text="bettercap" %}** - Modern Swiss army knife for network attacks. Does {% include skill.html text="ARP spoofing" %}, {% include skill.html text="SSL stripping" %}, {% include skill.html text="packet sniffing" %}, and more. More powerful than individual tools.
 
 
 ### WiFi Security

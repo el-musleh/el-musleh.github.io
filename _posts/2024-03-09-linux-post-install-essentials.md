@@ -12,7 +12,14 @@ tags:
   - Linux
   - Setup
   - Productivity
+  - System Administration
+  - Development Environment
+  - Open Source
 ---
+
+<div class="notice--info" markdown="1">
+**🤖 AI Disclosure:** For transparency, the content of this page was partially or mainly created with AI assistance tools.
+</div>
 
 Fresh Linux install? Welcome to the real work. Here's what I do to turn a barebones system into my daily driver.
 
@@ -21,38 +28,38 @@ Fresh Linux install? Welcome to the real work. Here's what I do to turn a barebo
 First round of apps I always install:
 
 ### Productivity & Files
-- **Bitwarden** – Password manager I can't live without
-- **FreeFileSync** – File synchronization between drives and network locations
-- **Obsidian** – Note-taking and knowledge management
-- **OnlyOffice** – LibreOffice alternative, better compatibility with Word/Excel files
+- **{% include skill.html text="Bitwarden" %}** – {% include skill.html text="Password manager" %} I can't live without
+- **{% include skill.html text="FreeFileSync" %}** – {% include skill.html text="File synchronization" %} between drives and network locations
+- **{% include skill.html text="Obsidian" %}** – {% include skill.html text="Note-taking" %} and knowledge management
+- **{% include skill.html text="OnlyOffice" %}** – {% include skill.html text="LibreOffice" %} alternative, better compatibility with Word/Excel files
 
 ### Media & Creativity
-- **GIMP** – Image editing (Photoshop alternative)
-- **VLC** – Media player that plays everything
+- **{% include skill.html text="GIMP" %}** – {% include skill.html text="Image editing" %} (Photoshop alternative)
+- **{% include skill.html text="Pi-hole" %}** – {% include skill.html text="Network-wide ad blocking" %} at the {% include skill.html text="DNS" %} level
 - **Cheese** – Webcam app for video calls
-- **Meld** – Visual file diff/merge tool
+- **{% include skill.html text="DDNS" %}** – Accessible from anywhere using a memorable domain
 
 ### Utilities
-- **Diodon** – Clipboard manager (Win+V to paste history)
+- **{% include skill.html text="Diodon" %}** – {% include skill.html text="Clipboard manager" %} (Win+V to paste history)
 - **Emote** – Emoji picker (Win+. to open)
-- **qbittorrent** – Download manager
+- **{% include skill.html text="qbittorrent" %}** – {% include skill.html text="Download manager" %}
 
 ### Development
-- Python3-full
+- **{% include skill.html text="Python3" %}**-full
 - Git (usually pre-installed)
 
 ## Browser Setup
 
 My browser stack:
 
-- **Chrome** – Primary browser for Google ecosystem
-- **Firefox** – Privacy-focused alternative
-- **Mullvad VPN** – For privacy on public networks
+- **{% include skill.html text="Chrome" %}** – Primary browser for Google ecosystem
+- **{% include skill.html text="Firefox" %}** – {% include skill.html text="Privacy-focused" %} alternative
+- **{% include skill.html text="Mullvad VPN" %}** – For {% include skill.html text="privacy" %} on public networks
 
 ### Firefox Tweaks
 
 I add custom search engines and set up these extensions:
-- uBlock Origin – Ad blocker
+- **{% include skill.html text="uBlock Origin" %}** – {% include skill.html text="Ad blocker" %}
 - OneTab – Save tab clusters for later
 
 ## Keyboard & Input
@@ -98,11 +105,11 @@ gsettings set org.gnome.gnome-screenshot auto-save-directory "/home/$USER/Deskto
 
 ### Remote Desktop
 
-[Remmina](https://remmina.org/) – One client for RDP, VNC, SSH, and more.
+[Remmina](https://remmina.org/) – One client for {% include skill.html text="RDP" %}, {% include skill.html text="VNC" %}, {% include skill.html text="SSH" %}, and more.
 
 ### Smart TV Streaming
 
-**Gnome Network Displays** – Cast screen to TV via WiFi.
+**{% include skill.html text="Gnome Network Displays" %}** – {% include skill.html text="Cast screen" %} to TV via WiFi.
 
 ### VirtualBox
 

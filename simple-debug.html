@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Debug</title>
+</head>
+<body>
+    <h1>Simple Debug Test</h1>
+    <p>Current URL: <code id="current-url"></code></p>
+    <p>URLSearchParams result: <code id="urlsearch-result"></code></p>
+    <p>Manual decode result: <code id="manual-result"></code></p>
+    
+    <div id="debug-output"></div>
+    
+    <script>
+        // Test URLSearchParams vs manual parsing
+        function testUrlParsing() {
+            const currentUrl = window.location.search;
+            document.getElementById('current-url').textContent = currentUrl;
+            
+            // Test URLSearchParams
+            try {
+                const urlParams = new URLSearchParams(currentUrl);
+                const tagValue = urlParams.get('tag');
+                document.getElementById('urlsearch-result').textContent = tagValue;
+                console.log('URLSearchParams result:', tagValue);
+            } catch (err) {
+                document.getElementById('urlsearch-result').textContent = 'ERROR: ' + err.message;
+                console.error('URLSearchParams error:', err);
+            }
+            
+            // Test manual parsing
+            try {
+                const searchParams = currentUrl.substring(1).split('&');
+                for (let i = 0; i < searchParams.length; i++) {
+                    const pair = searchParams[i].split('=');
+                    if (pair[0] === 'tag' && pair.length > 1) {
+                        const raw = pair.slice(1).join('=');
+                        const decoded = decodeURIComponent(raw);
+                        document.getElementById('manual-result').textContent = decoded;
+                        console.log('Manual decode result:', decoded);
+                        break;
+                    }
+                }
+            } catch (err) {
+                document.getElementById('manual-result').textContent = 'ERROR: ' + err.message;
+                console.error('Manual decode error:', err);
+            }
+            
+            // Test with hardcoded C++ URL
+            console.log('Testing hardcoded C++ URL...');
+            const testUrl = '?tag=C%2B%2B';
+            const testParams = new URLSearchParams(testUrl);
+            const testResult = testParams.get('tag');
+            console.log('Hardcoded test result:', testResult);
+            
+            // Add to debug output
+            const debugOutput = document.getElementById('debug-output');
+            debugOutput.innerHTML = `
+                <h3>Debug Information</h3>
+                <p><strong>Hardcoded test (?tag=C%2B%2B):</strong> ${testResult}</p>
+                <p><strong>URLSearchParams supported:</strong> ${typeof URLSearchParams !== 'undefined' ? 'Yes' : 'No'}</p>
+            `;
+        }
+        
+        // Run test
+        testUrlParsing();
+        
+        // Test links
+        document.write('<p><a href="?tag=C%2B%2B">Test C++ (URL encoded)</a> | <a href="?tag=C++">Test C++ (direct)</a></p>');
+    </script>
+</body>
+</html>

@@ -1,27 +1,10 @@
 {
-  "name": "academic-pages",
-  "version": "0.8.1.1",
-  "description": "Academic Pages Mistakes Jekyll theme npm build scripts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/academicpages/academicpages.github.io"
-  },
-  "keywords": [
-    "jekyll",
-    "theme",
-    "minimal"
-  ],
-  "contributors": [
-    "Michael Rose",
-    "Robert Zupko"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/academicpages/academicpages.github.io/issues"
-  },
-  "homepage": "https://github.com/academicpages/academicpages.github.io",
+  "name": "el-musleh-site",
+  "version": "1.0.0",
+  "description": "Mohammad El-Musleh personal portfolio & blog",
+  "private": true,
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 18.0.0"
   },
   "dependencies": {
     "fitvids": "^2.1.1",
@@ -29,12 +12,27 @@
     "jquery-smooth-scroll": "^2.2.0"
   },
   "devDependencies": {
+    "eslint": "^8.57.0",
+    "htmlhint": "^1.1.4",
+    "markdownlint-cli": "^0.39.0",
+    "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "uglify-js": "^3.17.4"
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "uglify-js": "^3.17.4",
+    "@lhci/cli": "^0.14.0",
+    "linkinator": "^6.0.4"
   },
   "scripts": {
     "uglify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/fitvids/dist/fitvids.min.js node_modules/jquery-smooth-scroll/jquery.smooth-scroll.min.js assets/js/plugins/jquery.greedy-navigation.js assets/js/_main.js -c -m -o assets/js/main.min.js",
     "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
-    "build:js": "npm run uglify"
+    "build:js": "npm run uglify",
+    "lint:js": "eslint \"assets/js/*.js\" \"assets/js/**/*.js\" --ignore-pattern \"assets/js/main.min.js\"",
+    "lint:scss": "stylelint \"assets/css/main.scss\" \"_sass/layout/*.scss\" \"_sass/theme/*.scss\" \"_sass/include/*.scss\"",
+    "lint:md": "markdownlint \"_posts/**/*.md\" \"_projects/**/*.md\" \"_pages/**/*.md\" --ignore node_modules",
+    "lint:html": "htmlhint \"_site/**/*.html\"",
+    "lint": "npm-run-all --parallel lint:js lint:scss lint:md",
+    "audit:links": "linkinator https://el-musleh.github.io --skip \"linkedin\\.com|twitter\\.com|facebook\\.com|instagram\\.com|goodreads\\.com|xing\\.com|youtube\\.com|academia\\.edu|scholar\\.google\" --verbosity error",
+    "audit:lighthouse": "lhci autorun"
   }
 }

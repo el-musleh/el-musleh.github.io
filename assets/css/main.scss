@@ -42,27 +42,200 @@
     "vendor/font-awesome/brands"
 ;
 
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES — skills & card components (theme-aware)
+   ========================================================================== */
+
+:root {
+  --skill-badge-bg       : #f3f4f6;
+  --skill-badge-color    : #333;
+  --skill-badge-border   : #e5e7eb;
+  --skill-badge-hover-bg : #0056b3;
+  --skill-count-bg       : #d1d5db;
+  --skill-count-color    : #555;
+  --skill-accent         : #0056b3;
+}
+
+html[data-theme="dark"] {
+  --skill-badge-bg       : #3d3d3d;
+  --skill-badge-color    : #e0e0e0;
+  --skill-badge-border   : #555;
+  --skill-badge-hover-bg : #0ea1c5;
+  --skill-count-bg       : #505050;
+  --skill-count-color    : #bbb;
+  --skill-accent         : #0ea1c5;
+}
+
+/* ==========================================================================
+   SKILLS CLOUD (about page)
+   ========================================================================== */
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px; /* Space between tags */
+  gap: 8px;
   margin-top: 10px;
 }
 
 .cv-skill-badge {
-  background-color: #f3f4f6;
-  color: #333;
+  background-color: var(--skill-badge-bg);
+  color: var(--skill-badge-color);
   padding: 4px 10px;
   border-radius: 15px;
   text-decoration: none;
   font-size: 0.9em;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--skill-badge-border);
   transition: all 0.2s ease;
 }
 
 .cv-skill-badge:hover {
-  background-color: #0056b3; /* Change to your theme color */
-  color: white;
+  background-color: var(--skill-badge-hover-bg);
+  color: #fff;
   text-decoration: none;
-  border-color: #0056b3;
+  border-color: var(--skill-badge-hover-bg);
+}
+
+.cv-skill-badge:hover .skill-count {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.skill-count {
+  display: inline-block;
+  background-color: var(--skill-count-bg);
+  color: var(--skill-count-color);
+  border-radius: 10px;
+  font-size: 0.78em;
+  padding: 0 6px;
+  margin-left: 5px;
+  font-weight: 600;
+  line-height: 1.5;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+.skill-hidden {
+  display: none !important;
+}
+
+.skills-show-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 16px;
+  border-radius: 15px;
+  border: 1px solid var(--skill-accent);
+  background: transparent;
+  color: var(--skill-accent);
+  font-size: 0.88em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skills-show-toggle:hover {
+  background-color: var(--skill-accent);
+  color: #fff;
+}
+
+/* ==========================================================================
+   SKILLS PAGE (/skills/)
+   ========================================================================== */
+
+.skill-section {
+  margin-bottom: 2.5em;
+}
+
+.skill-section__title {
+  border-bottom: 1px solid var(--global-border-color);
+  padding-bottom: 0.5em;
+  margin-bottom: 0.75em;
+}
+
+.skill-section__list {
+  padding-left: 1.25em;
+}
+
+.skill-section__venue {
+  color: var(--global-text-color-light);
+  font-size: 0.9em;
+}
+
+.skills-back-btn {
+  display: inline-block;
+  margin-bottom: 1.5em;
+}
+
+/* ==========================================================================
+   ARCHIVE CARD — tags & authors
+   ========================================================================== */
+
+.archive__item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 0.75em;
+}
+
+.archive__item-tag {
+  background-color: var(--skill-badge-bg);
+  color: var(--skill-badge-color);
+  border: 1px solid var(--skill-badge-border);
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.72em;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.archive__item-tag:hover {
+  background-color: var(--skill-badge-hover-bg);
+  color: #fff;
+  border-color: var(--skill-badge-hover-bg);
+  text-decoration: none;
+}
+
+.archive__item-authors {
+  margin: 0.35em 0 0;
+  font-size: 0.8em;
+  color: var(--global-text-color-light);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+
+@media (max-width: 599px) {
+  /* Tighter card padding on small screens */
+  .list__item .archive__item {
+    padding: 0.9em 1em;
+  }
+
+  /* Skills cloud wraps more aggressively */
+  .skills-container {
+    gap: 6px;
+  }
+
+  .cv-skill-badge {
+    font-size: 0.82em;
+    padding: 3px 8px;
+  }
+
+  /* Tag badges on cards stay legible */
+  .archive__item-tag {
+    font-size: 0.7em;
+    padding: 2px 6px;
+  }
+}
+
+/* ==========================================================================
+   ABOUT PAGE — compact project/publication items
+   ========================================================================== */
+
+.archive__item--compact {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.archive__item--compact:last-child {
+  border-bottom: none;
 }
