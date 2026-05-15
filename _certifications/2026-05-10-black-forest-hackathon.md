@@ -8,7 +8,7 @@ category: "Awards"
 date: 2026-05-10
 issued_by: "BadenCampus and Black Forest Innovation GmbH"
 platform: "Offenburg, Germany"
-verification_url: "{{ base_path }}/files/certifications/award/Black Forest Hackathon May 2026.pdf"
+verification_url: "/files/certifications/award/Black Forest Hackathon May 2026.pdf"
 excerpt: "Won third place at the Black Forest Hackathon 2026, developing an innovative SmartRegion solution in a 48-hour sprint."
 tags: ["Python", "Vibe Coding", "Artificial Intelligence", "Git", "Software Development", "Web Development", "Team Collaboration", "Problem Solving", "Rapid Prototyping", "System Architecture"]
 ---
