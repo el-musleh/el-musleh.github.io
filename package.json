@@ -1,5 +1,5 @@
 {
-  "name": "el-musleh-site",
+  "name": "elmusleh-site",
   "version": "1.0.0",
   "description": "Mohammad El-Musleh personal portfolio & blog",
   "private": true,
@@ -32,7 +32,7 @@
     "lint:md": "markdownlint \"_posts/**/*.md\" \"_projects/**/*.md\" \"_pages/**/*.md\" --ignore node_modules",
     "lint:html": "htmlhint \"_site/**/*.html\"",
     "lint": "npm-run-all --parallel lint:js lint:scss lint:md",
-    "audit:links": "linkinator https://el-musleh.github.io --skip \"linkedin\\.com|twitter\\.com|facebook\\.com|instagram\\.com|goodreads\\.com|xing\\.com|youtube\\.com|academia\\.edu|scholar\\.google\" --verbosity error",
+    "audit:links": "linkinator https://elmusleh.github.io --skip \"linkedin\\.com|twitter\\.com|facebook\\.com|instagram\\.com|goodreads\\.com|xing\\.com|youtube\\.com|academia\\.edu|scholar\\.google\" --verbosity error",
     "audit:lighthouse": "lhci autorun"
   }
 }

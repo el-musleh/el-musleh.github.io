@@ -35,7 +35,7 @@ That's the problem I set out to solve.
 
 ## The Solution
 
-I created [nerd-dictation-auto-switch-languages](https://github.com/el-musleh/nerd-dictation-auto-switch-languages), a wrapper script that automatically detects your current {% include skill.html text="keyboard layout" %} and uses the appropriate {% include skill.html text="speech-to-text" %} model. No more manual switching. Just press one shortcut and start talking.
+I created [nerd-dictation-auto-switch-languages](https://github.com/elmusleh/nerd-dictation-auto-switch-languages), a wrapper script that automatically detects your current {% include skill.html text="keyboard layout" %} and uses the appropriate {% include skill.html text="speech-to-text" %} model. No more manual switching. Just press one shortcut and start talking.
 
 ### How It Works
 
@@ -210,7 +210,7 @@ The project is fully open-source and available on GitHub. Contributions welcome!
 
 ## Resources
 
-- [nerd-dictation-auto-switch-languages Repository](https://github.com/el-musleh/nerd-dictation-auto-switch-languages)
+- [nerd-dictation-auto-switch-languages Repository](https://github.com/elmusleh/nerd-dictation-auto-switch-languages)
 - [nerd-dictation](https://github.com/ideasman42/nerd-dictation)
 - [VOSK Models](https://alphacephei.com/vosk/models)
 - [xkblayout-state](https://github.com/nonpop/xkblayout-state)

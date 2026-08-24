@@ -22,4 +22,4 @@ Key outcome:
 - Analyzed data collected from a smartphone's {% include skill.html text="IMU sensor" %} using {% include skill.html text="MATLAB" %} to monitor step detection and position estimation for elderly health evaluation and anomaly detection. 
 - Applied {% include skill.html text="signal filtering" %} and {% include skill.html text="sensor fusion" %} techniques to raw data, such as {% include skill.html text="RMS" %}, to refine step and stair-climbing detection. Implemented thresholds and bias reduction for accurate movement estimation.
 
-[The source code is available in Github.](https://github.com/el-musleh/phoneIMU).
+[The source code is available in Github.](https://github.com/elmusleh/phoneIMU).

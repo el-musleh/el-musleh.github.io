@@ -22,4 +22,4 @@ Based on the similarity between the state machine notation and the nodes and edg
 
 A proof-of-concept is implemented to demonstrate the proposed framework. By using a dedicated schema, the fetched data is matched with the expected results. The results prove that the transformation method and the proposed framework have a good potential to be developed and evaluated with a realistic test from the industry practice. 
 
-[The source code is available in Github.](https://github.com/el-musleh/uml-req2test)
+[The source code is available in Github.](https://github.com/elmusleh/uml-req2test)

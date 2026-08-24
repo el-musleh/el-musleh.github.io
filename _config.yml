@@ -16,7 +16,7 @@ description              : &description "Mohammad El-Musleh's personal website" 
 url                      : https://elmusleh.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "el-musleh/el-musleh.github.io"
+repository               : "elmusleh/elmusleh.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -48,9 +48,9 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "el-musleh"
+  github           : "elmusleh"
   kaggle           : # Username  
-  stackoverflow    : "5859682/el-musleh"   
+  stackoverflow    : "5859682/elmusleh"   
 
   # Social media
   artstation       : # Username
@@ -58,12 +58,12 @@ author:
   facebook         : mohammad.elmusleh
   flickr           : # Username
   foursquare       : # Username
-  goodreads        : el-musleh
+  goodreads        : elmusleh
   google_plus      : # Username
   keybase          : # Username
   instagram        : mohammad.elmusleh
   lastfm           : # Username
-  linkedin         : el-musleh
+  linkedin         : elmusleh
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -76,7 +76,7 @@ author:
   weibo            : # Username
   wikipedia        : # Username
   xing             : Mohammad_ElMusleh074362
-  youtube          : el-musleh
+  youtube          : elmusleh
   zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
@@ -148,18 +148,18 @@ social:
   type                   : "Person" # Person or Organization (defaults to Person)
   name                   : "Mohammad El-Musleh" # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
-    - "https://linkedin.com/in/el-musleh"
-    - "https://github.com/el-musleh"
+    - "https://linkedin.com/in/elmusleh"
+    - "https://github.com/elmusleh"
     - "https://scholar.google.com/citations?user=eAdur28AAAAJ"
     - "https://orcid.org/0000-0001-6424-2277"
     - "https://www.researchgate.net/profile/Mohammad_El-Musleh"
     - "https://twitter.com/123elmusleh"
-    - "https://www.youtube.com/@el-musleh"
+    - "https://www.youtube.com/@elmusleh"
     - "https://www.xing.com/profile/Mohammad_ElMusleh074362"
     - "https://instagram.com/mohammad.elmusleh"
-    - "https://www.el-musleh.github.io"
+    - "https://www.elmusleh.github.io"
     - "https://www.facebook.com/mohammad.elmusleh"
-    - "https://www.stackoverflow.com/users/5859682/el-musleh"
+    - "https://www.stackoverflow.com/users/5859682/elmusleh"
     - "https://uppsala.academia.edu/elmusleh"
     - "https://elmusleh.site"
 

@@ -61,4 +61,4 @@ This was a hackathon prototype built under time pressure. Notable limitations:
 - Full portfolio analysis (143 ingredients) takes ~12 minutes sequentially
 - Storage is SQLite, not production-grade
 
-**Explore the full codebase:** [github.com/el-musleh/global_suppliers-for-spherecast](https://github.com/el-musleh/global_suppliers-for-spherecast)
+**Explore the full codebase:** [github.com/elmusleh/global_suppliers-for-spherecast](https://github.com/elmusleh/global_suppliers-for-spherecast)

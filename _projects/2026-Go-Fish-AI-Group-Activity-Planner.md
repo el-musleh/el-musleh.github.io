@@ -50,5 +50,5 @@ The output is a small shortlist of suggested activities with reasoning, not an o
 
 This was built in 30 hours, so there are rough edges. The Ticketmaster integration is wired up as an optional data source, not a direct booking system — the app confirms plans via email, it doesn't purchase tickets. The LLM-powered suggestions work well for the hackathon demo; a production version would benefit from better preference modeling and real-time venue data.
 
-**Explore the full codebase:** [github.com/el-musleh/Go-Fish](https://github.com/el-musleh/Go-Fish)  
+**Explore the full codebase:** [github.com/elmusleh/Go-Fish](https://github.com/elmusleh/Go-Fish)  
 **See all hackathon projects:** [creators-ecosystem.de/de/hackathon-projects](https://www.creators-ecosystem.de/de/hackathon-projects)

@@ -14,7 +14,7 @@ redirect_from:
 
 <div class="cv-download-links">
   <a href="{{ base_path }}/files/misc/Mohammad_El_Musleh_enCV.pdf" class="btn btn--info">🔽 Download CV as PDF</a>
-  <a href="{{ base_path }}/files/misc/el-musleh_contacts.vcf" class="btn btn--info">🔽 Download my contact information (vcf)</a>
+  <a href="{{ base_path }}/files/misc/elmusleh_contacts.vcf" class="btn btn--info">🔽 Download my contact information (vcf)</a>
   <a href="https://calendly.com/mohammadmusleh3/30min" class="btn btn--info">🗓️ Schedule a 30-minute meeting</a>
 </div>
 <br>
