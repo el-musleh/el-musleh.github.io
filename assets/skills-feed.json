@@ -1,20 +1,355 @@
----
-layout: null
----
 [
-  {% comment %} 
-    Concatenate all collections you want to scan for skills 
-  {% endcomment %}
-  {% assign all_docs = site.education | concat: site.experience | concat: site.projects | concat: site.publications | concat: site.posts %}
-  {% for doc in all_docs %}
-    {
-      "title": {{ doc.title | jsonify }},
-      "url": {{ doc.url | relative_url | jsonify }},
-      "venue": {{ doc.venue | jsonify }},
-      "date": {{ doc.date | jsonify }},
-      "tags": {{ doc.tags | jsonify }}, 
-      "content": {{ doc.content | jsonify }}
-    }
-    {% unless forloop.last %},{% endunless %}
-  {% endfor %}
+  {
+    "title": "Agnes Prototype: AI-Powered Raw Material Sourcing (Spherecast Hackathon)",
+    "url": "/projects/2026-Agnes-Global-Suppliers-for-Spherecast",
+    "tags": [
+      "Sentence-Transformers",
+      "Playwright",
+      "AI",
+      "Gradio",
+      "Supply Chain",
+      "RAG",
+      "FAISS",
+      "Gemini API",
+      "SQLite",
+      "Hackathon",
+      "BM25",
+      "Vibe Coding",
+      "Python"
+    ]
+  },
+  {
+    "title": "Bachelor of Science in Computer Engineering",
+    "url": "/education/2014-Near-East-University",
+    "tags": [
+      "Software Development",
+      "Computer Engineering",
+      "C Programming",
+      "Web Development",
+      "Python"
+    ]
+  },
+  {
+    "title": "Decentralized Credit Risk Engine: Smart Contract & Automated Settlement System",
+    "url": "/projects/2023-Decentralized-Credit-Risk-Engine",
+    "tags": [
+      "Behavioral Risk Modeling",
+      "Full-Stack",
+      "behavioral engine",
+      "Behavioral Analytics",
+      "smart contracts",
+      "Ethereum",
+      "smart contract",
+      "Web3.js",
+      "Blockchain",
+      "Browserify",
+      "Web3",
+      "Node.js",
+      "JavaScript",
+      "Truffle",
+      "Ganache",
+      "behavioral signals",
+      "blockchain",
+      "decentralized",
+      "behavioral risk",
+      "Smart Contract",
+      "Solidity",
+      "DeFi",
+      "browser fingerprint engine",
+      "Insurer contract",
+      "Smart Contracts"
+    ]
+  },
+  {
+    "title": "Elevator Control System using STM32 MCU",
+    "url": "/projects/2019-Elevator-Control-System-using-STM32",
+    "tags": [
+      "Control System",
+      "embedded systems",
+      "Embedded Systems",
+      "State Machine",
+      "MIL Testing",
+      "MIL testing",
+      "STM32CubeMX",
+      "state machine",
+      "MCU",
+      "MATLAB",
+      "Keil uVision",
+      "HIL Testing",
+      "Model-Based Design",
+      "MIL",
+      "HIL testing",
+      "C++",
+      "microcontroller",
+      "Simulink",
+      "GPIO",
+      "STM32",
+      "Embedded Coder",
+      "Keil \u03bcVision"
+    ]
+  },
+  {
+    "title": "Go Fish: AI-Powered Group Activity Planner",
+    "url": "/projects/2026-Go-Fish-AI-Group-Activity-Planner",
+    "tags": [
+      "LLM",
+      "Software Development",
+      "AI",
+      "Group Planning",
+      "Express",
+      "Vibe Coding",
+      "Hackathon",
+      "Git",
+      "PostgreSQL",
+      "Web Development",
+      "React"
+    ]
+  },
+  {
+    "title": "Master of Science in Embedded Systems",
+    "url": "/education/2018-Uppsala-University",
+    "tags": [
+      "Software Engineering",
+      "Embedded Systems",
+      "Control Systems",
+      "C Programming",
+      "Real-Time Systems",
+      "Signal Processing",
+      "C++ Programming",
+      "Hardware Software Co-design"
+    ]
+  },
+  {
+    "title": "Network and IT Support",
+    "url": "/experience/2017.07-Global-Integrated-Solution",
+    "tags": [
+      "Network Installation",
+      "Troubleshooting",
+      "Software Development",
+      "Internet Protocol Suite (TCP/IP)",
+      "network monitoring",
+      "Hardware Setup",
+      "security",
+      "physical installation",
+      "hardware"
+    ]
+  },
+  {
+    "title": "Network and IT Support",
+    "url": "/experience/2016.07-Global-Integrated-Solution",
+    "tags": [
+      "Network Installation",
+      "Troubleshooting",
+      "Software Development",
+      "Internet Protocol Suite (TCP/IP)",
+      "Hardware Setup",
+      "hardware"
+    ]
+  },
+  {
+    "title": "Slidarr: A Resistance-Sensing MIDI Musical Instrument",
+    "url": "/projects/2019-Slidarr-Musical-Instrument",
+    "tags": [
+      "octaves",
+      "Embedded Systems",
+      "TM4C",
+      "voltage divider",
+      "Resistance Sensing",
+      "embedded C",
+      "MATLAB",
+      "Octave",
+      "Electronic Prototyping",
+      "Musical Instrument Design",
+      "signal analysis",
+      "Arduino",
+      "microcontroller",
+      "chromatic scale",
+      "MIDI",
+      "Pitchbend",
+      "Music Technology",
+      "resistance",
+      "ADC",
+      "pitchbend"
+    ]
+  },
+  {
+    "title": "Software Engineer",
+    "url": "/experience/2021.03-BOSCH-Thermoteknik-AB",
+    "tags": [
+      "Software Development",
+      "Agile Methodologies",
+      "Azure",
+      "Embedded Systems",
+      "Web Development",
+      "Requirements Traceability",
+      "Vector CANalyzer",
+      "Confluence",
+      "User Interface Design",
+      "Debugging",
+      "C (Programming Language)",
+      "Jira",
+      "clean code practices",
+      "Python",
+      "Test Planning",
+      "CAN communication",
+      "Test Automation",
+      ".NET",
+      "Git",
+      "Clean Coding",
+      "C++",
+      "C#",
+      "Peer Reviews",
+      "XML",
+      "Software Lifecycle",
+      "V-Model",
+      "JSON",
+      "Unified Modeling Language (UML)",
+      "Object-Oriented Programming (OOP)",
+      "SOLID principles"
+    ]
+  },
+  {
+    "title": "Software Engineer",
+    "url": "/experience/2024.11-Freelancer",
+    "tags": [
+      "Visual Studio Code",
+      "Open-Source",
+      "Machine Learning",
+      "AI-assisted",
+      "Cursor",
+      "Firmware Prototyping",
+      "Generative AI",
+      "unit test",
+      "GitHub Copilot",
+      "Code Refactoring",
+      "AI-Assisted Development"
+    ]
+  },
+  {
+    "title": "Software Engineer (Consultant)",
+    "url": "/experience/2022.02-ATLEN-GmbH",
+    "tags": [
+      "Software Development",
+      "Agile Methodologies",
+      "Embedded Systems",
+      "CAN bus",
+      "Web Development",
+      "Requirements Traceability",
+      "SOLID Design Principles",
+      ".NET Framework",
+      "Vector CANalyzer",
+      "multithreaded applications",
+      "Confluence",
+      "User Interface Design",
+      "Debugging",
+      "C (Programming Language)",
+      "Jira",
+      "Test Planning",
+      "Test Automation",
+      "Git",
+      "C++",
+      "Clean Coding",
+      "C#",
+      "Visual Studio",
+      "Peer Reviews",
+      "XML",
+      "Software Lifecycle",
+      "V-Model",
+      "JSON",
+      "Unified Modeling Language (UML)",
+      "Object-Oriented Programming (OOP)",
+      "unit tested"
+    ]
+  },
+  {
+    "title": "Software Engineer (Thesis Project)",
+    "url": "/experience/2020.02-NEVS-AB",
+    "tags": [
+      "Software Development",
+      "Agile Methodologies",
+      "Embedded Systems",
+      "Neo4j",
+      "MySQL",
+      "HTML5",
+      "Cascading Style Sheets (CSS)",
+      "Requirements Traceability",
+      "SOLID Design Principles",
+      "Python (Programming Language)",
+      "Microsoft Visual Studio Code",
+      "JavaScript",
+      "GraphQL",
+      "Confluence",
+      "User Interface Design",
+      "Debugging",
+      "Jira",
+      "Test Automation",
+      "Git",
+      "Clean Coding",
+      "API",
+      "React.js",
+      "XML",
+      "Object-Oriented Programming (OOP)",
+      "V-Model",
+      "Apollo GraphQL",
+      "JSON",
+      "Unified Modeling Language (UML)"
+    ]
+  },
+  {
+    "title": "Steps detection and position estimate from data collected using smartphone sensors",
+    "url": "/publications/2020-11-26-smartphone-steps-detection-and-position-estimate",
+    "tags": [
+      "Smartphones",
+      "Stepping Stone Detection",
+      "IMU sensor",
+      ".NET Framework",
+      ".NET",
+      "sensor fusion",
+      "MATLAB",
+      "Physical Activity",
+      "Android",
+      "Signal Processing",
+      "Data Analysis",
+      "C++",
+      "Position Estimation",
+      "signal filtering",
+      "Sensor Fusion",
+      "RMS"
+    ]
+  },
+  {
+    "title": "Transformation of UML State Machine Diagram into Graph Database to Generate Test Cases",
+    "url": "/publications/2020-11-11-transformation-of-UML-State-Machine-diagram-into-graph-DB",
+    "tags": [
+      ".NET",
+      "test data",
+      "test case generation",
+      "Neo4j",
+      "black-box testing",
+      "requirement",
+      "GraphQL API",
+      "state machine diagram",
+      "C#",
+      "UML"
+    ]
+  },
+  {
+    "title": "Usability of E-GPU Using Mini PCI-Express Card Slot",
+    "url": "/projects/2018-E-GPU-Using-Mini-PCI-Express-Card-Slot",
+    "tags": [
+      "PCI-Express",
+      "E-GPU",
+      "Laptop",
+      "PCI-E 16x",
+      "GPU",
+      "graphics processing",
+      "Performance Benchmarking",
+      "mini PCI-E 16x",
+      "Hardware",
+      "Graphics",
+      "integrated graphics",
+      "PCIe",
+      "GPUs"
+    ]
+  }
 ]
